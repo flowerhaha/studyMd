@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 10px;
+            height: 400px;
+            background: orchid;
+            position: relative;
+            margin: 0 auto;
+            animation: run 2s steps(4) infinite;
+            transform-origin: center top;
+        }
+        .box{
+            width: 40px;
+            height: 40px;
+            background: peru;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -40px;
+            left: -15px;
+        }
+        @keyframes run {
+            0%,100%{
+                transform: rotate(-45deg);
+            }
+            25%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(45deg);
+            }
+            75%{
+                transform: rotate(0deg);
+            }
+            /* 100%{
+                transform: rotate(-45deg);
+            } */
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

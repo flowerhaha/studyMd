@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>请选择</h5>
+    <!-- 实现单选功能：
+            给一组单选input框设置一个相同的name名
+     -->
+    <!-- 男<input type="radio" name="sex">
+    女<input type="radio" name="sex"> -->
+
+    <!-- 让文字进行关联 -->
+    <!-- 单选按钮实现的文字关联功能：
+        1、把文字用一个用label标签包起来
+        2、让label标签中的for属性对应的属性值=要关联的input框的id名字-->
+    <label for="man">男</label><input id="man" type="radio" name="sex">
+    <label for="woman">女</label><input id="woman" type="radio" name="sex">
+</body>
+</html>

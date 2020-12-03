@@ -1,0 +1,128 @@
+.md{
+    width: 1226px;
+    margin: 0 auto;
+}
+.adv{
+    height: 120px;
+    background: url(../images/adv.jpg) center center no-repeat;
+    background-size: cover;
+}
+.navBox{
+    background: #333;
+    height: 40px;
+    font-size: 12px;
+}
+.navBox .navIn{
+    height: 40px;
+    line-height: 40px;
+}
+.navIn a{
+    color: #b0b0b0;
+    float: left;
+}
+.navIn a:hover{
+    color: #fff;
+}
+.navIn a::after{
+    content: "|";
+    color: #424242;
+    margin: 0 4px;
+}
+.navIn .left .Select::after{
+    content: "";
+    display: none;
+}
+.navIn .right{
+    float: right;
+}
+.navIn .right a{
+    /* margin: 0 5px; */
+    float: left;
+}
+.navIn .right .info::after,.navIn .right .cart::after{
+    content: "";
+    display: none;
+}
+/* .navIn .right .cart::after{
+    content: "";
+    display: none;
+} */
+.navIn .right .cart{
+    width: 120px;
+    text-align: center;
+    margin-left: 15px;
+    padding: 0;
+}
+.navIn .right .cart:hover{
+    background: #fff;
+    color: darkorange;
+}
+/* 灰色背景 */
+.grayArea{
+    background: #f5f5f5;
+}
+.grayIn .top{
+    height: 58px;
+    line-height: 58px;
+}
+.grayIn .top h3{
+    font-size: 22px;
+    font-weight: normal;
+    float: left;
+}
+.grayIn .top a{
+    float: right;
+    color: #424242;
+    font-size: 16px;
+}
+.grayIn .bot{
+    height: 614px;
+}
+.grayIn .bot .left{
+    width: 234px;
+    height: 100%;
+    display: block;
+    background: url(../images/phone.webp) center center no-repeat;
+    background-size: cover;
+    float: left;
+}
+.grayIn .bot .right{
+    width: 992px;
+    height: 100%;
+    float: left;
+}
+.bot .right li{
+    width: 234px;
+    height: 300px;
+    margin: 0 0 14px 14px;
+    background: #fff;
+    float: left;
+}
+.bot .right li a{
+    height: 100%;
+    display: block;
+    padding: 20px 0; 
+    box-sizing: border-box;
+    color: #333;
+    text-align: center;
+}
+.bot .right img{
+    width: 160px;
+    display: block;
+    margin: 0 auto;
+}
+.bot .right h5{
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0 10px 2px 10px;
+}
+.bot .right .dec{
+    color: #b0b0b0;
+    font-size: 12px;
+    padding: 0 10px 10px 10px;
+}
+.bot .right .price{
+    color: #ff6700;
+    padding: 0 10px 14px 10px;
+}
+

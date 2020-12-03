@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function () {
+            function computed() {
+                // 获取屏幕的宽度
+                var win = document.documentElement.clientWidth || document.body.clientWidth;
+                // 设计稿的尺寸
+                var des = 640;
+                // 如果屏幕的宽度>=设计稿的尺寸，我们
+                if (win >= des) {
+                    document.documentElement.style.fontSize ="100px";
+                    return;
+                }
+                document.documentElement.style.fontSize = win / des * 100 + "px";
+            }
+            computed();
+            window.onresize=function(){
+              computed();
+            }
+
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <a class="logo" href=""></a>
+        <a class="menu" href=""></a>
+    </header>
+    <section class="banner"></section>
+    <main>
+        <section>
+            <section class="allClass">
+                <img src="images/classMes.png" alt="">
+                <span>全部课程</span>
+            </section>
+            <ul class="lists">
+                <li>
+                    <a href="">
+                        <img src="images/class.png" alt="">
+                        <p>vue.js从理论精讲到项目实战课程</p>
+                        <p>¥599.00元</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/class.png" alt="">
+                        <p>vue.js从理论精讲到项目实战课程</p>
+                        <p>¥599.00元</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/class.png" alt="">
+                        <p>vue.js从理论精讲到项目实战课程</p>
+                        <p>¥599.00元</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/class.png" alt="">
+                        <p>vue.js从理论精讲到项目实战课程</p>
+                        <p>¥599.00元</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/class.png" alt="">
+                        <p>vue.js从理论精讲到项目实战课程</p>
+                        <p>¥599.00元</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/class.png" alt="">
+                        <p>vue.js从理论精讲到项目实战课程</p>
+                        <p>¥599.00元</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <a href="">
+            <img src="images/main.png" alt="">
+            <span>首页</span>
+        </a>
+        <a href="">
+            <img src="images/myClass.png" alt="">
+            <span>我的课程</span>
+        </a>
+        <a href="">
+            <img src="images/user.png" alt="">
+            <span>个人中心</span>
+        </a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            height: 500px;
+        }
+        ul>li{
+            width: 12.5%;
+            height: 50px;
+            border: 1px solid #333;
+            float: left;
+            box-sizing: border-box;
+        }
+        /* 大于等于1200 的时候显示8个
+           大于等于900 小于1200的时候显示4个
+           大于等于768px 小于900的时候显示2个
+           小于768px 的时候显示一个
+
+         */ 
+        @media screen and (max-width:768px){
+            ul>li{
+                width: 100%;
+            }
+        }
+        @media screen and (min-width:769px) and (max-width:900px){
+            ul>li{
+                width: 50%;
+            }
+        }
+        @media screen and (min-width:901px) and (max-width:1200px){
+            ul>li{
+                width: 25%;
+            }
+        }
+        @media screen and (min-width:1201px){
+            ul>li{
+                width: 12.5%;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="lists">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

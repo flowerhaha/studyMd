@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100px;
+            background: yellow;
+            /* overflow: hidden; */
+        }
+        .box{
+            width: 50px;
+            height: 200px;
+            background: yellowgreen;
+            float: left;
+        }
+        /*  */
+        .last{
+            /* 清除左浮动 */
+            clear: left;
+            /* 清除右浮动 */
+            clear: right;
+            /* 清除左右浮动 */
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+        <div class="last"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html><html><head><title>第五天笔记</title><meta charset='utf-8'><link href='https://cdn.maxiang.io/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h3 id="第五天笔记">第五天笔记</h3>
+
+
+
+<h3 id="绝对路径和相对路径">绝对路径和相对路径</h3>
+
+<p>1）绝对路径：就是你的主页上的文件或目录在硬盘上真正的路径，（url和物理路径），如</p>
+
+<ul><li><p>C:\xyz\test.txt 代表了test.txt文件的绝对路径。</p></li>
+<li><p><a href="http://www.sun.com/index.htm" target="_blank">http://www.sun.com/index.htm</a>也代表了一个URL的绝对路径</p></li>
+</ul>
+
+<p>2）相对路径：相对某个基准目录的路径</p>
+
+<ul><li><p>同级目录的时候：直接写名字</p></li>
+<li><p>下一级目录：/</p></li>
+<li><p>返回上一级目录：../（如果返回一级就是一个../如果返回多个就是多个../）</p></li>
+</ul>
+
+
+
+<h3 id="css的三大特性">css的三大特性</h3>
+
+<ul><li><p>继承性</p></li>
+<li><p>层叠性</p></li>
+<li><p>优先级</p></li>
+</ul>
+
+<p>1）继承性：给某个元素设置了一些样式，它的后代元素也能继承这些样式，以color/font-/text-/line-开头的属性、元素可见性：visibility 、以及普通文档流中的宽度是可继承的</p>
+
+<p>2）层叠性：对同一个元素同一个属性设置了不同的值，css处理这种冲突的能力 <br>
+如何处理：</p>
+
+<ul><li><p>如果权重相同的话，就看css代码的顺序，后面的会把前面的属性覆盖</p></li>
+<li><p>如果权重不相同的话，谁权重大就听谁的。</p></li>
+</ul>
+
+<p>3）权重：</p>
+
+<blockquote>
+  <p><strong><code>权重顺序</code></strong>：!important &gt; 内联样式   &gt; id &gt; 类 &gt; 标签  &gt; 通配符 &gt; 继承 &gt; 浏览器默认</p>
+</blockquote>
+
+<p>!important：强制使用此样式</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span>
+</div><div class="hljs-line"><span class="css">    <span class="hljs-selector-class">.box1</span>{</span>
+</div><div class="hljs-line"><span class="css">        <span class="hljs-attribute">color</span>:lightblue <span class="hljs-meta">!important</span>;</span>
+</div><div class="hljs-line"><span class="css">    }</span>
+</div><div class="hljs-line"><span class="css">    <span class="hljs-selector-id">#box1</span>{</span>
+</div><div class="hljs-line"><span class="css">        <span class="hljs-attribute">color</span>:red;</span>
+</div><div class="hljs-line"><span class="css">    }</span>
+</div><div class="hljs-line"><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box1"</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+
+
+
+<h3 id="常用的表单元素">常用的表单元素</h3>
+
+<ul><li><p>input</p>
+
+<ul>
+<li><p>type值</p>
+
+<ul>
+<li><p>text：文本</p></li>
+<li><p>password：密码</p></li>
+<li><p>reset：重置</p></li>
+<li><p>submit：提交</p></li>
+<li><p>button：按钮</p></li>
+<li><p>radio：单选按钮</p></li>
+<li><p>checkbox：多选按钮</p></li></ul></li>
+<li><p>常用属性</p>
+
+<ul>
+<li><p>placeholder：提示文本（占位符）</p></li>
+<li><p>autofocus：自动获取焦点</p></li>
+<li><p>checked：默认选中</p></li>
+<li><p>disabled：禁止选中</p></li>
+<li><p>required：必填项</p></li></ul></li></ul></li>
+<li><p>button：按钮(默认也有提交表单的功能，想要禁止，添加type=“button”这个属性便可以禁止)</p></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"提交的接口地址，不写地址时就会提交到当前页面"</span>  <span class="hljs-attr">method</span>=<span class="hljs-string">"GET"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 文本 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"userName"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"请输入用户名"</span> <span class="hljs-attr">autofocus</span> <span class="hljs-attr">required</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 密码 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"passWord"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 重置按钮 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"reset"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 提交 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 按钮 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"显示的文字内容"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 按钮 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 单选 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">checked</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 多选 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">checked</span> <span class="hljs-attr">disabled</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div></code></pre>
+
+<ul><li><p>textarea：文本框（评论框）</p></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span>
+</div><div class="hljs-line"><span class="css">        <span class="hljs-selector-tag">textarea</span>{</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* 禁止重置尺寸 */</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">resize</span>: none;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* 去除点击时候出现的蓝色基线 */</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">outline</span>: none;</span>
+</div><div class="hljs-line"><span class="css">        }</span>
+</div><div class="hljs-line"><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+
+<ul><li><p>select：下拉框</p>
+
+<ul>
+<li><p>selected：默认选中某项</p></li>
+<li><p>disabled：禁止被选中</p></li></ul></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line">        <span class="hljs-comment">&lt;!-- 下拉框 --&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">""</span> <span class="hljs-attr">id</span>=<span class="hljs-string">""</span>&gt;</span>
+</div><div class="hljs-line">            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">disabled</span>&gt;</span>请选择<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+</div><div class="hljs-line">            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>sddw<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+</div><div class="hljs-line">            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">selected</span>&gt;</span>rte<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+</div><div class="hljs-line">            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>vsvfsf<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</div></code></pre>
+
+
+
+<h3 id="单选功能的实现">单选功能的实现</h3>
+
+<p><strong><code>实现单选功能：给一组单选input框设置一个相同的name名</code></strong></p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>请选择<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+</div><div class="hljs-line">    男<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sex"</span>&gt;</span>
+</div><div class="hljs-line">    女<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sex"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+
+
+
+<h3 id="文字关联功能">文字关联功能</h3>
+
+<p><strong><code>单选按钮实现的文字关联功能</code></strong></p>
+
+<ul><li><p><strong>把文字用一个label标签包起来</strong></p></li>
+<li><p><strong>让label标签中的for属性对应的属性值=要关联的input框的id名字</strong></p></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stata"><div class="hljs-line">    &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"man"</span>&gt;男&lt;/<span class="hljs-keyword">label</span>&gt;&lt;<span class="hljs-keyword">input</span> id=<span class="hljs-string">"man"</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"radio"</span> name=<span class="hljs-string">"sex"</span>&gt;
+</div><div class="hljs-line">    &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"woman"</span>&gt;女&lt;/<span class="hljs-keyword">label</span>&gt;&lt;<span class="hljs-keyword">input</span> id=<span class="hljs-string">"woman"</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"radio"</span> name=<span class="hljs-string">"sex"</span>&gt;
+</div></code></pre>
+
+
+
+<h3 id="盒模型网页中的每一个元素都可以看成一个盒模型">盒模型：网页中的每一个元素都可以看成一个盒模型</h3>
+
+<ul><li><p>主要包含的部分：</p>
+
+<ul>
+<li><p>content：主要的内容区</p></li>
+<li><p>padding：内填充</p></li>
+<li><p>border：边框线</p></li>
+<li><p>margin：盒子与盒子的距离</p></li></ul></li>
+</ul>
+
+
+
+<p><img longdesc="./盒模型.png" alt="Alt text" title="" type="image/png" src="data:image/png;base64,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IhBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVAgAABAgQIEGiMgMTcmFJaCAECBAgQIECAQBABiTkIq04JECBAgAABAgQaIyAxN6aUFkKAAAECBJCkw+EAAAmASURBVAgQIBBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVAgAABAgQIEGiMgMTcmFJaCAECBAgQIECAQBABiTkIq04JECBAgAABAgQaIyAxN6aUFkKAAAECBAgQIBBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVAgAABAgQIEGiMgMTcmFJaCAECBAgQIECAQBABiTkIq04JECBAgAABAgQaIyAxN6aUFkKAAAECBAgQIBBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVAgAABAgQIEGiMgMTcmFJaCAECBAgQIECAQBABiTkIq04JECBAgAABAgQaIyAxN6aUFkKAAAECBAgQIBBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVAgAABAgQIEGiMgMTcmFJaCAECBAgQIECAQBABiTkIq04JECBAgAABAgQaIyAxN6aUFkKAAAECBAgQIBBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVAgAABAgQIEGiMgMTcmFJaCAECBAgQIECAQBABiTkIq04JECBAgAABAgQaIyAxN6aUFkKAAAECBAgQIBBEQGIOwqpTAgQIECBAgACBxghIzI0ppYUQIECAAAECBAgEEZCYg7DqlAABAgQIECBAoDECEnNjSmkhBAgQIECAAAECQQQk5iCsOiVA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" class=""></p>
+
+<ul><li><p>盒模型计算总盒子大小：</p>
+
+<ul>
+<li><p>总盒子高度 = content的高度 + padding（上下）+ border（上下）</p></li>
+<li><p>总盒子宽度 = content的宽度 + padding（左右）+ border（左右）</p></li></ul></li>
+<li><p>盒模型的分类</p>
+
+<ul>
+<li><p>标准盒模型（默认）：box-sizing：content-box</p></li>
+<li><p><strong>ie盒模型：box-sizing：border-box</strong></p></li></ul></li>
+</ul>
+
+<blockquote>
+  <p>标准盒模型中，代码里面所写的width和高度指的是盒模型中content部分的宽和高。 <br>
+  在ie盒模型下：代码中所写的width和高height指的是总盒子的宽高，如果你用到了padding、border，浏览器会自动减去，计算出来content部分。。<strong>在实战项目中经常用ie盒模型</strong></p>
+</blockquote>
+
+
+
+<h3 id="padding顺序规律">padding顺序规律</h3>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span>
+</div><div class="hljs-line"><span class="css">        <span class="hljs-selector-class">.box</span>{</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">background</span>: yellow;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">display</span>: inline-block;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* 上、右、下、左（顺时针） */</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">50px</span> <span class="hljs-number">80px</span> <span class="hljs-number">100px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* 上、左右、下 （顺时针方向，没写的找对边）*/</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span> <span class="hljs-number">80px</span> <span class="hljs-number">100px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* 上下、左右 */</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">50px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* 如果四个方向的值都相同，可以写一个 */</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span>;</span>
+</div><div class="hljs-line"><span class="css">        }</span>
+</div><div class="hljs-line"><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>box<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+
+
+
+<h3 id="面试题">面试题</h3>
+
+<blockquote>
+  <p><strong>1、margin值穿透：</strong> <br>
+  <strong>问题：</strong>有一个大盒子里面套了一个小盒子，想要让小盒子离大盒子上部有一定的距离，给小盒子设置离一个margin-top，造成离大盒子会跟着小盒子一起往下掉 <br>
+  <strong>解决方法：</strong></p>
+  
+  <ul><li><p>1、给大盒子设置padding-top:30px;</p></li>
+  <li><p>2、第二个办法：给大盒子设置一个border-top:1px solid transparent;就不会出现下掉，但是注意整体盒子多了1px，可以使用box-sizing</p></li>
+  <li><p>3、第三个办法：给大盒子设置一个overflow:hidden;</p></li>
+  </ul>
+  
+  </blockquote>
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line"> <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span>
+</div><div class="hljs-line"><span class="css">       *{</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span>
+</div><div class="hljs-line"><span class="css">        }</span>
+</div><div class="hljs-line"><span class="css">        <span class="hljs-selector-class">.main</span>{</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">background</span>: yellow;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* padding-top: 30px; */</span></span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-comment">/* border-top: 1px solid transparent;</span></span>
+</div><div class="hljs-line"><span class="css">            box-sizing: border-box; */</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">overflow</span>: hidden;</span>
+</div><div class="hljs-line"><span class="css">        }</span>
+</div><div class="hljs-line"><span class="css">        <span class="hljs-selector-class">.box</span>{</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">background</span>: green;</span>
+</div><div class="hljs-line"><span class="css">            <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">30px</span>;</span>
+</div><div class="hljs-line"><span class="css">        }</span>
+</div><div class="hljs-line"><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+
+<blockquote>
+  <p><strong>2、margin值合并：</strong>在两个兄弟元素：box1、box2,给box1设置一个向下的距离，给box2设置一个向上的距离，两个盒子之间的距离并不是它们之和，而是去较大的那个距离  <br>
+          <strong>解决方法</strong>：应避免出现这种情况，可以给.box1设置margin-bottom: 150px; 或者给.box2设置margin-top:150px;</p>
+</blockquote>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus"><div class="hljs-line">    *{
+</div><div class="hljs-line">            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+</div><div class="hljs-line">            <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">        <span class="hljs-selector-class">.box1</span>,.box2{
+</div><div class="hljs-line">            <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+</div><div class="hljs-line">            <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+</div><div class="hljs-line">            <span class="hljs-attribute">background</span>: pink;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">        .box1{
+</div><div class="hljs-line">            <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">50px</span>;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">        .box2{
+</div><div class="hljs-line">            <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">100px</span>;
+</div><div class="hljs-line">            <span class="hljs-attribute">background</span>: yellow;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">    &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"box1"</span>&gt;&lt;/div&gt;
+</div><div class="hljs-line">    &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"box2"</span>&gt;&lt;/div&gt;
+</div></code></pre></div></body></html>

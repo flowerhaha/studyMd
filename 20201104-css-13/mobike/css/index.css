@@ -1,0 +1,165 @@
+.bannerBox{
+    height: 762px;
+    position: relative;
+}
+.md{
+    width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+/* 定义轮播图大小 */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+} 
+#slide1,#slide2,#slide3{
+    background: url(../images/hero-bg-3.jpg) center center no-repeat;
+    background-size: cover;
+}
+#slide2{
+    background-image: url(../images/hero-bg-4.jpg);
+}
+#slide3{
+    background-image: url(../images/hero-bg-5.jpg);
+}
+.navBox{
+    height: 56px;
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.navIn .logo{
+    float: left;
+    margin-top: 8px;
+}
+.navIn .links{
+    float: right;
+}
+.navIn .links>a{
+    color: #fff;
+    font-size: 16px;
+    float: left;
+    padding: 8px 20px;
+    margin-top: 9px;
+}
+.advBox{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+}
+.advBox h1{
+    font-size: 67px;
+    color: #fff;
+    /* 消除h1自身带的距离：line-height: 1 */
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.advBox a{
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    /* padding: 14px 26px; */
+    width: 296px;
+    height: 59px;
+    line-height: 59px;
+    text-align: center;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+.advBox a:hover{
+    background: rgba(0,0,0,.8);
+}
+.lists li{
+    width: 25%;
+    height: 260px;
+    border: 1px solid #fff;
+    border-bottom: none;
+    border-top-width: 2px;
+    box-sizing: border-box;
+    float: left;
+    background: url(../images/promo-01.jpg) center center no-repeat;
+    background-size: cover;
+}
+.lists li:first-child{
+    border-left: none;
+}
+.lists li>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.lists li>a h4{
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+/* @media screen and (max-width:640px){
+    .md{
+        width: 100%;
+    }
+    .lists li{
+        width: 100%;
+    }
+    .bannerBox{
+        height: 570px;
+    }
+    .navIn .links{
+        display: none;
+    }
+    .advBox h1{
+        font-size: 44px;
+    }
+}
+@media screen and (min-width:641px) and (max-width:1080px){
+    .md{
+        width: 100%;
+    }
+    .lists li{
+        width: 50%;
+    }
+    .navIn .links{
+        display: none;
+    }
+    .bannerBox{
+        height: 570px;
+    }
+    .advBox h1{
+        font-size: 44px;
+    }
+} */
+
+/* 或者复合写 */
+@media screen and (max-width:1080px){
+    .md{
+        width: 100%;
+    }
+    .lists li{
+        width: 50%;
+    }
+    .navIn .links{
+        display: none;
+    }
+    .bannerBox{
+        height: 570px;
+    }
+    .advBox h1{
+        font-size: 44px;
+    }
+}
+@media screen and (max-width:640px){
+    .lists li{
+        width: 100%;
+    }
+}
+
+
+

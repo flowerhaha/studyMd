@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin: 100px auto;
+            transition: all 2s linear;
+            /* 倾斜 */
+            transform: skewX(45deg);
+            transform: skewY(45deg);
+            transform: skew(45deg,35deg);
+        }
+        .box:hover{
+            /* 旋转 */
+            transform: rotateX(360deg);
+            transform: rotateY(360deg);
+            transform: rotateZ(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

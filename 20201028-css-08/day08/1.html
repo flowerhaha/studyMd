@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 所有儿子中的第几个 */
+        /* 所有儿子中的第三个，但是必须是p元素，但是找不到，所以不起作用 */
+        .main>p:nth-child(3){
+            background: red;
+        }
+        /* 特定类型的第几个 */
+        .main>p:nth-of-type(3){
+            background: yellow;
+        }
+        /* 倒数 */
+        .main>p:nth-last-of-type(1){
+            background: lawngreen;
+        }
+        .main>p:nth-of-type(2n){
+            background: lightcoral;
+        }
+        /* 第一个 */
+        .main>p:first-of-type{
+            background: lightpink;
+        }
+        /* 最后一个 */
+        .main>p:last-of-type{
+            background: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>p1</p>
+        <p>p2</p>
+        <h3>h3</h3>
+        <p>p3</p>
+        <p>p4</p>
+    </div>
+</body>
+</html>

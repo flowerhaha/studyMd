@@ -1,0 +1,260 @@
+.md{
+    width: 1200px;
+    margin: 0 auto;
+}
+.zhuFeng{
+    background: #fff;
+}
+.linkBox{
+    height: 52px;
+    padding: 16px 30px 16px 0;
+}
+.linkBox .logo{
+    width: 176px;
+    height: 52px;
+    background: url(../images/zf-pc/logo.png) no-repeat;
+    float: left;
+}
+.linkList{
+    float: left;
+}
+.linkList li{
+    height: 52px;
+    padding: 22px 0 15px 0;
+    box-sizing: border-box;
+    float: left;
+}
+.linkList li a{
+    color: #2A2A2A;
+}
+.linkList .NodeLink{
+    margin: 0 68px 0 85px;
+    color: #2B7DD1;
+}
+.linkList .viodeLink{
+    margin: 0 57px 0 55px;
+}
+.linkList .callUs{
+    margin: 0 86px 0 45px;
+}
+.linkRight{
+    float: right;
+    height: 52px;
+    padding: 17px 0 13px 0;
+    box-sizing: border-box;
+}
+.linkRight a{
+    color: #666767;
+    vertical-align: middle;
+    margin-left: 32px;
+}
+.linkRight .cart{
+    vertical-align: top;
+    display: line-block;
+}
+.bannerIn{
+    height: 360px;
+    background: url(../images/zf-pc/banner1.png) no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+.bannerList{
+    padding: 0 25px;
+    width: 240px;
+    height: 100%;
+    box-sizing: border-box;
+}
+.bannerList li{
+    height: 72px;
+    line-height: 72px;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}
+.bannerList li a{
+    color: #FDFDFE;
+    float: left;
+    height: 72px;
+    padding: 0 8px 0 11px;
+    box-sizing: border-box;
+}
+.bannerList a span{
+    float: left;
+}
+.bannerList .arrow{
+    margin-left: 26px;
+}
+.bannerList li:last-child{
+    border: none;
+}
+.recommend{
+    margin-bottom: 28px;
+}
+.recommend h3{
+    font-weight: normal;
+    font-size: 16px;
+    padding: 19px 0;
+}
+.recDec{
+    height: 184px;
+}
+.recDec .recDec_link{
+    position: relative;
+}
+.recDec li{
+    width: 255px;
+    height: 184px;
+    float: left;
+    margin-right: 60px;
+}
+.recDec li:last-child{
+    margin-right: 0;
+}
+.rec{
+    height: 184px;
+}
+.recDec li a{
+    color: #1E1E1E;
+    display: block;
+    height: 100%;
+}
+.recDec .imgDec{
+    width: 255px;
+    padding: 16px 0 16px 15px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 73px;
+    left: 0;
+    /* background: rgba(255, 255, 255, 0); */
+    background: #fff;
+    opacity: 0.9;
+    box-shadow: 0px 2px 4px 0px rgba(2, 2, 2, 0.27);
+}
+.imgDec .imgDec_bot{
+    padding-top: 28px;
+}
+.imgDec_bot .price{
+    float: left;
+    color: #C71B1B;
+    font-size: 12px;
+}
+.imgDec_bot .num{
+    color: #868484;
+    font-size: 12px;
+    float: right;
+    padding-right: 13px;
+}
+.grayBox{
+    background: #F3F5F7;
+}
+.grayIn{
+    padding: 34px 0 54px 0;
+    height: 380px;
+}
+.grayIn_left{
+    float: left;
+    width: 224px;
+    height: 380px;
+    background: url(../images/zf-pc/bg3.png);
+    background-size: cover;
+    margin-right: 17px;
+}
+.grayIn_mid{
+    float: left;
+    width: 670px;
+    height: 100%;
+    margin-right: 14px;
+}
+.grayIn_mid li{
+    float: left;
+}
+.grayIn_mid li:nth-child(2n){
+    margin-right: 0;
+}
+.grayIn_mid .activeWeb{
+    width: 397px;
+    height: 184px;
+    margin: 0 14px 10px 0;
+}
+.grayIn_mid .jqApply{
+    margin-bottom: 0;
+}
+.grayIn_right{
+    float: right;
+}
+.bgRight{
+    display: block;
+    width: 257px;
+    height: 145px;
+    background: url(../images/zf-pc/libg2.png) no-repeat;
+    background-size: cover;
+}
+.bgDec{
+    width: 251px;
+    background: #fff;
+    padding: 30px 24px;
+    box-sizing: border-box;
+}
+.bgTit{
+    display: block;
+}
+.bgTit{
+    font-size: 16px;
+    color: #1E1E1E;
+}
+.bgNum{
+    padding: 14px 0 14px 0;
+    border-bottom: 1px solid #E1E1E1;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.bgList{
+    list-style-type: square;
+    padding-left: 18px;
+}
+.bgList a{
+    color: #1E1E1E;
+    font-size: 12px;
+}
+.botLink{
+    background: #2E2E2E;
+    height: 272px;
+}
+.botIn{
+    padding: 54px 24px 68px 10px;
+    box-sizing: border-box;
+}
+.botIn .aboutUs{
+    margin-right: 70px;
+}
+.botIn h5{
+    color: #FEFDFD;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-weight: normal;
+} 
+.botIn li a{
+    color: #A3A3A3;
+    display: block;
+    line-height: 30px;
+}
+.botDec{
+    float: left;
+}
+.botLogo{
+    float: right;
+}
+.botImg{
+    margin-top: 20px;
+}
+.btoDec{
+    background:#212121;
+    text-align: center;
+    padding: 27px 0;
+    color: #CECCCC;
+}
+.Powered{
+    color: #A3A3A3;
+}
+.EduSoho{
+    color: #CFCFCF;
+}

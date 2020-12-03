@@ -1,0 +1,79 @@
+.greayBox{
+    background: #f5f5f5;
+}
+.md{
+    width: 1226px;
+    margin: 0 auto;
+}
+.grayTop{
+    width: 100%;
+    height: 58px;
+    line-height: 58px;
+}
+.grayTop h3{
+    float: left;
+    font-weight: normal;
+    font-size: 22px;
+    color: #333;
+}
+.grayTop a{
+    float: right;
+    color: #424242;
+    font-size: 16px;
+}
+.grayBot{
+    height: 614px;
+}
+.grayBot .left{
+    float: left;
+    width: 234px;
+    height: 100%;
+    background: url(../images/phone.webp) center center no-repeat;
+    background-size: cover;
+}
+.grayBot .right{
+    width: 992px;
+    height: 100%;
+    float: right;
+}
+.grayBot .right>li{
+    width: 234px;
+    height: 300px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    margin: 0 0 14px 14px;
+    background: #fff;
+    float: left;
+}
+.grayBot .right>li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+}
+.right>li a>img{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 18px;
+}
+.right>li a>h3{
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 10px 2px 10px;
+}
+.right>li a>p:nth-of-type(1){
+    color: #b0b0b0;
+    font-size: 12px;
+    margin: 0 10px 10px 10px;
+}
+.right>li a>p:nth-of-type(2){
+    color:  #ff6700;
+    font-size: 14px;
+    margin: 0 10px 14px 10px;
+}
+.grayBot .right .listBot{
+    margin-bottom: 0px;
+}

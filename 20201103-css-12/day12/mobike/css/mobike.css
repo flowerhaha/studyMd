@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    content:"";
+    font-size:0;
+    display:block;
+    height:0;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix{
+    *zoom:1;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.banner{
+    width: 100%;
+    height: 762px;
+    background:url(../images/bike.jpg) center center no-repeat;
+    /* background-size: cover; */
+    background-size: 100% auto;
+}
+.md{
+    width: 1080px;
+    margin: 0 auto;
+}
+.headIn{
+    width: 100%;
+    height: 80px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    display: none;
+}
+.head .logo{
+    float: left;
+}
+.headLink{
+    float: right;
+}
+.headLink>li{
+    float: left;
+}
+.headLink>li a{
+    color: #fff;
+    padding: 8px 20px;
+}
+/* lists */
+.lists>li{
+    width: 25%;
+    height: 260px;
+    float: left;
+    border: 1px solid #fff; 
+    border-top-width: 2px;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+.lists>li:first-child{
+   border-left: none;
+}
+.lists>li a{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bike1.jpg);
+    background-size: cover;
+}
+@media screen and (min-width:1080px){
+    .headIn{
+        display: block;
+    }
+    .lists>li{
+        width: 25%;
+    }
+}
+@media screen and (min-width:641px) and (max-width:1079px){
+    .lists>li{
+        width: 50%;
+    }
+}
+@media screen and (max-width:640px){
+    .lists>li{
+        width: 100%;
+    }
+}

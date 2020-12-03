@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="banner">
+        <!-- 轮播 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" id="page1">Slide 1</div>
+                <div class="swiper-slide" id="page2">Slide 2</div>
+                <div class="swiper-slide" id="page3">Slide 3</div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <a href="">产品</a>
+        <a href="">摩拜科技</a>
+        <a href="">关于</a>
+        <a href="">广告合作</a>
+    </div>
+</body>
+</html>
+<script src="js/swiper.min.js"></script>
+<script>
+window.onload=function(){
+    var mySwiper = new Swiper ('.swiper-container', {
+    loop: true,
+     autoplay:true,
+  
+  })        
+}
+</script>

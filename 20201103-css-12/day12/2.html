@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /* pc端兼容性 */
+
+            /* 谷歌 */
+            -webkit-border-radius: 50%;
+            /*  欧朋*/
+            -o-border-radius: 50%;
+            /* ie */
+            -ms-border-radius: 50%;
+            /* 火狐 */
+            -moz-border-radius: 50%;
+            /* 标准 */
+            border-radius: 50%;
+
+            /* 手机端只需要写谷歌的和标准的就可以 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

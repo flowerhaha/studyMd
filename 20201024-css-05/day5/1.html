@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            /* 禁止重置尺寸 */
+            resize: none;
+            /* 去除点击时候出现的蓝色基线 */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="提交的接口地址，不写地址时就会提交到当前页面" method="GET">
+        <!-- 文本 -->
+        <input type="text" name="userName" placeholder="请输入用户名" autofocus required>
+        <!-- 密码 -->
+        <input type="password" name="passWord">
+        <!-- 重置按钮 -->
+        <input type="reset">
+        <!-- 提交 -->
+        <input type="submit">
+        <!-- 按钮 -->
+        <input type="button" value="显示的文字内容">
+        <!-- 按钮 -->
+        <button>按钮</button>
+        <!-- 单选 -->
+        <input type="radio" checked>
+        <!-- 多选 -->
+        <input type="checkbox" checked disabled>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <!-- 下拉框 -->
+        <select name="" id="">
+            <option value="" disabled>请选择</option>
+            <option value="">sddw</option>
+            <option value="" selected>rte</option>
+            <option value="">vsvfsf</option>
+        </select>
+    </form>
+    
+</body>
+</html>

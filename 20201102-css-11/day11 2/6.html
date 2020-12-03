@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background:pink;
+            /* animation: run 2s linear 0 iteration-count direction fill-mode; */
+            /* animation: run 2s linear 0s infinite ; */
+            /* forwards 让动画停留在最后一帧
+               backwards 如果动画中有延迟，能快速跑到第一帧的位置，开始动画
+               both:迅速以第一针开始，并停留在最后一帧
+            */
+            animation: run 2s linear 1s both;
+        }
+
+        @keyframes run{
+            0%{
+                transform:translate(200px,0);
+            }
+            50%{
+                transform:translate(500px,200px);
+                background:chartreuse;
+                border-radius: 50%;
+            }
+            100%{
+                transform:translate(500px,500px);
+                background:red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

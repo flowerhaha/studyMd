@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box{
+            width: 100px;
+            height: 100px;
+            background: limegreen;
+            /* 相对定位
+                1、不脱离普通文档流
+                2、相对定位的元素层级高于普通文档流
+                3、给绝对定位的元素做参照物
+                4、相对定位、相对自身原有的位置
+            */
+
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+        .box1{
+            width: 200px;
+            height: 50px;
+            background: magenta;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+</body>
+</html>

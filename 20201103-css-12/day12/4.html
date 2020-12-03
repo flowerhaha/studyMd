@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: violet;
+            border-radius: 50%;
+            margin-top: 100px;
+            box-shadow: 
+            0 0 0 20px lemonchiffon,
+            0 0 0 40px lightblue,
+            0 0 0 60px lightcoral,
+            0 0 0 80px lightseagreen;
+            animation: run 2s linear infinite;
+        }
+        @keyframes run{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(45deg);
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

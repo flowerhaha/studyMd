@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div{
+         /* 让文字垂直居中：让行高等于高度 */
+         height: 200px;
+         width: 200px;
+         /* 
+          第一个值代表的是：边框的粗细
+          第二个值代表的是：边框的样式 
+              solid： 代表的是实线
+              dashed：虚线
+
+          第二个值代表的是：边框的颜色
+
+         */
+         border:5px solid darkcyan;
+         display:inline-block;
+      }
+     .box2{
+         border:5px dashed darkcyan;
+     }
+     .box3{
+         border:5px double darkcyan;
+     }
+     .box4{
+         border:10px groove darkcyan;
+     }
+    </style>
+</head>
+<body>
+   <div></div>
+   <div class="box2"></div>
+   <div class="box3"></div>
+   <div class="box4"></div>
+   
+</body>
+</html>

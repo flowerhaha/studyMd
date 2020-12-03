@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            /* 从下往上 */
+            background: -webkit-linear-gradient(bottom,red, green);
+            background: linear-gradient(bottom,red,green);
+            /* 从左上角到右下角 */
+            background: -webkit-linear-gradient(left top,red,green);
+            background: linear-gradient(left top,red,green);
+            /* 还可以是角度 */
+            background: -webkit-linear-gradient(10deg,red,green);
+            background: linear-gradient(10deg,red,green);
+            background: -webkit-linear-gradient(90deg,red,green);
+            background: linear-gradient(90deg,red,green);
+
+/*    效果：上下两个不同颜色的长方形 */
+/* 法一： */
+            background: -webkit-linear-gradient(red 50%,green 50%);
+            background: linear-gradient(red 50%,green 50%);
+
+
+/* 法二： */
+            background: -webkit-linear-gradient(
+                yellow 0%,
+                yellow 50% 
+                green 50%,
+                green 100%);
+            background: linear-gradient(yellow 0%,
+            yellow 50%, 
+            green 50%,
+            green 100%);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

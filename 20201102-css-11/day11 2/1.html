@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background:pink;
+            transition:all 2s linear;
+            /* 水平方向，可以理解是宽度 */
+            transform:scaleX(2);
+            /* 垂直方向，可以理解是高度 */
+            transform:scaleY(0.5);
+            transform: scale(2,0.5);
+            /* 如果说x 和y 值，可以写一个，代表宽度和高度同时缩放n倍 */
+            transform: scale(2);
+        }
+        .box:hover{
+            /* 水平位移 */
+            transform: translateX(500px);
+            /* 垂直位移 */
+            transform: translateY(500px);
+            /* 第一个值：代表水平，第二个值代表垂直 */
+            transform: translate(600px,500px);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

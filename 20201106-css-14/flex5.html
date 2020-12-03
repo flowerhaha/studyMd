@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        /* 
+        容器：给谁添加flex
+        项目：容器的子元素
+        
+        
+         */
+        .main{
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid red;
+            display: flex;
+            /* 让主轴的方向是：水平的（默认的） */
+            flex-direction: row;
+            /* flex-direction: row-reverse; */
+            /* 让主轴的方向是：垂直的 */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            flex-wrap: wrap;
+            /* align-content 当有多根轴线的时候结合flex-wrap:wrap 起作用 */
+            align-content:flex-end;
+            align-content: center;
+            align-content: flex-start;
+            align-content: space-between;
+            align-content: space-around;
+            align-content: stretch;
+        }
+        .main>li{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="main">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>

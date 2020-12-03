@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:rgb(21, 164, 207);
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+        .main{
+            width: 300px;
+            margin: 0 auto;
+            border: 5px dashed darkorange;
+            background: rgb(21, 164, 207);
+        }
+        h3{
+            margin: 20px 20px;
+            font-weight: normal;
+        }
+        .link1{
+            margin-left: 114px;
+        }
+        li{
+            height: 60px;
+            line-height: 60px;
+        }
+        /* .link2{
+            color: black;
+        } */
+        span{
+            margin-left: 20px;
+            color: red;  
+        }
+        li:hover{
+            background-color: yellowgreen;
+        }
+        /* li:hover a{
+            color: #fff;
+        }
+        li:hover span{
+            color: #fff;
+        } */
+        /* 可以使用子选择器 */
+        li:hover>a{
+            color: #fff;
+        }
+        li:hover>a>span{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3>最新动态<a href="" class="link1">更多</a></h3>
+        <ul>
+            <li><a href="" class="link2"><span>珠峰成长的秘密:</span>兴盛衰败一挥间</a></li>
+            <li><a href="" class="link2"><span>珠峰成长的秘密:</span>兴盛衰败一挥间</a></li>
+            <li><a href="" class="link2"><span>珠峰成长的秘密:</span>兴盛衰败一挥间</a></li>
+            <li><a href="" class="link2"><span>珠峰成长的秘密:</span>兴盛衰败一挥间</a></li>
+            <li><a href="" class="link2"><span>珠峰成长的秘密:</span>兴盛衰败一挥间</a></li>
+        </ul>
+    </div>
+</body>
+</html>

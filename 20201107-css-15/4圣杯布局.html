@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-width: 600px;
+        }
+        .wrap{
+            height: 500px;
+            padding: 0 200px;
+        }
+        .wrap>div{
+            height: 500px;
+            float: left;
+        }
+        .main{
+            width: 100%;
+            background: burlywood;
+        }
+        .left{
+            width: 200px;
+            background: cadetblue;
+            margin-left: -100%;
+            position: relative;
+            left: -200px;
+        }
+        .right{
+            width: 200px;
+            background: coral;
+            margin-left: -200px;
+            position: relative;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

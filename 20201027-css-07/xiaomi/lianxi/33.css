@@ -1,0 +1,27 @@
+.md{
+    width: 1226px;
+    margin: 0 auto;
+}
+.navBox{
+    background: #333;
+}
+.navIn{
+    height: 40px;
+}
+.navIn .left{
+    float: left;
+    line-height: 40px;
+}
+.navIn a{
+    float: left;
+    height: 17px;
+    font-size: 12px;
+    color: #b0b0b0;
+    border-right: 1px solid #424242;
+    padding-right: 4px;
+    margin-right: 4px;
+    box-sizing: border-box;
+}
+.navIn .right{
+    float: right;
+}

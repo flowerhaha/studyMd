@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* margin值穿透：有一个大盒子里面套了一个小盒子，想要让小盒子离大盒子上部有一定的距离，给小盒子设置离一个margin-top，造成离大盒子会跟着小盒子一起往下掉,解决方法
+        1、给大盒子设置为pdding-top:30px;
+        2、第二个办法：给大盒子设置一个border-top：1px solid transparent;就不会出现下掉
+        3、第三个办法：给大盒子设置一个overflow:hidden;
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 300px;
+            height: 300px;
+            background: yellow;
+            /* padding-top: 30px; */
+            /* border-top: 1px solid transparent;
+            box-sizing: border-box; */
+            overflow: hidden;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

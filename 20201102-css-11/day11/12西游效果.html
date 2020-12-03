@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            
+            background: url(../day11/bg.webp) center center no-repeat;
+            background-size: cover;
+            position: relative;
+            
+        }
+        .box{
+            width: 800px;
+            height: 500px;
+            position: absolute;
+            top: 360px;
+            left: 0;
+            animation: walks 5s linear infinite;
+        }
+        .box>div{
+            display: inline-block;
+        }
+        .wukong{
+            width: 200px;
+            height: 180px;
+            background: url(../day11/img/wukong.png) no-repeat;
+            animation: run1 1s steps(8) infinite;
+        }
+        .bajie{
+            width:200px;
+            height: 180px;
+            background: url(../day11/img/bajie.png) no-repeat; 
+            animation: run1 0.8s steps(8) infinite;
+        }
+        .tangsen{
+            width: 170px;
+            height: 240px;
+            margin-bottom: -30px;
+            background: url(../day11/img/tangsen.png) no-repeat;
+            animation: run2 1.2s steps(8) infinite;
+        }
+        .shasen{
+            width: 210px;
+            height: 200px;
+            margin-top: 10px;
+            background: url(../day11/img/shasen.png) no-repeat;
+            animation: run3 1s steps(8) infinite;
+        }
+        @keyframes run1{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1600px 0;
+            }
+        }
+        @keyframes run2{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1360px 0;
+            }
+        }
+        @keyframes run3{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1680px 0;
+            }
+        }
+        @keyframes walks{
+            0%{
+                transform: translateX(100vw);
+            }
+            100%{
+                transform: translateX(-800px);
+            }
+        }
+    </style>
+</head>
+<body>  
+    <div class="box">
+        <div class="wukong"></div>
+        <div class="bajie"></div>
+        <div class="tangsen"></div>
+        <div class="shasen"></div>
+    </div>
+</body>
+</html>

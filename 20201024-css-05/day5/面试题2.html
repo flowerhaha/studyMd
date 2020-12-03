@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* margin值合并：在两个兄弟元素：box1、box2,给box1设置一个向下的距离，给box2设置一个向上的距离，两个盒子之间的距离并不是它们之和，而是去较大的那个距离 
+        解决方法：应避免出现这种情况，可以给.box1设置margin-bottom: 150px; 或者给大盒子设置margin-top:150px;
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1,.box2{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        .box1{
+            margin-bottom: 50px;
+        }
+        .box2{
+            margin-top: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

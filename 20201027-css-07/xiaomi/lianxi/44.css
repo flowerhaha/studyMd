@@ -1,0 +1,188 @@
+.md{
+    width: 1226px;
+    margin: 0 auto;
+}
+.adv{
+    height: 120px;
+    background: url(../images/adv.jpg) center center no-repeat;
+    background-size: cover
+}
+.navBox{
+    background: #333;
+    font-size: 12px;
+}
+.navBox a{
+    color: #b0b0b0;
+    float: left;
+}
+.navBox a:hover{
+    color: #fff;
+}
+.navBox span{
+    color: #424242;
+    float: left;
+    margin: 0 4px;
+}
+.navBox .navIn{
+    height: 40px;
+    line-height: 40px;
+}
+.navIn .left{
+    float: left;
+}
+.navIn .right{
+    float: right;
+}
+.navIn .right .cart{
+    width: 120px;
+    height: 40px;
+    background: #424242;
+    float: right;
+    text-align: center;
+    margin-left: 15px;
+}
+.navIn .right .cart:hover{
+    color: #ff6700;
+    background: #fff;
+}
+/* 灰色区域 */
+.grayArea{
+    background: #f5f5f5;
+}
+/* 手机模块 */
+.phoneTop{
+    height: 58px;
+    line-height: 58px;
+}
+.phoneTop h3{
+    font-weight: normal;
+    float: left;
+    font-size: 22px;
+}
+.phoneTop .more{
+    float: right;
+    color: #424242;
+    font-size: 16px;
+}
+.phoneBot{
+    height: 614px;
+}
+.phoneBot .left{
+    width: 234px;
+    height: 100%;
+    background: url(../images/phone.webp) center center no-repeat;
+    background-size: cover;
+    float: left;
+}
+.phoneBot .right{
+    float: right;
+    width: 992px;
+    height: 100%;
+}
+.phoneBot .right li{
+    margin: 0 0 14px 14px;
+    background: #fff;
+    width: 234px;
+    height: 300px;
+    float: left;
+}
+.phoneBot .right a{
+    display: block;
+    width: 234px;
+    text-align: center;
+}
+.phoneBot .right img{
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+}
+.phoneBot .right h5{
+    font-size: 14px;
+    color: #333;
+    padding: 0 10px 2px 10px;
+    font-weight: normal;
+}
+.phoneBot .right .desc{
+    font-size: 12px;
+    color: #b0b0b0;
+    padding: 0px 10px 10px 10px;
+}
+.phoneBot .right .price{
+    font-size: 14px;
+    color: #ff6700;
+    padding: 0px 10px 14px 10px;
+}
+.banner_wrap{
+    height: 460px;
+    position: relative;
+}
+.banner_wrap .bannerIn{
+    height: 460px;
+    background: url(../images/banner1.webp) no-repeat;
+}
+.banner_wrap .bannerIn{
+    background-size: cover;
+}
+.bannerList{
+    width: 234px;
+    height: 100%;
+    background: rgba(105,101,101,.6);
+    padding: 20px 0;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bannerList li{
+    height: 42px;
+    line-height: 42px;
+}
+.bannerList li a{
+    padding: 0 30px;
+    box-sizing: border-box;
+    float: left;
+    width: 234px;
+    height: 100%;
+    color: #fff;
+    font-size: 14px;
+}
+.bannerList li span{
+    float: right;
+}
+.bannerList li:hover{
+    background: #ff6700;
+}
+.listIn{
+    width: 530px;
+    height: 460px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    display: none;
+}
+.bannerList li:hover .listIn{
+    display: block;
+}
+.arrowLeft,.arroeRight{
+    width: 41px;
+    height: 69px;
+    background: url(../images/icon-slides.png) no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+}
+.arrowLeft{
+    left: 234px;
+    background-position: -84px 0;
+}
+.arrowLeft:hover{
+    background-position: 0 0;
+}
+.arroeRight{
+    right: 0;
+    background-position: -123px 0;
+}
+.arroeRight:hover{
+    background-position: -41px 0;
+}

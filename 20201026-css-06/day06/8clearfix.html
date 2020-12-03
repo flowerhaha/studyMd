@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after{
+            content: "";
+            font-size: 0;
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+        .main{
+            width: 100px;
+            background: yellow;
+            /* overflow: hidden; */
+        }
+        .box{
+            width: 50px;
+            height: 200px;
+            background: yellowgreen;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="main clearfix">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

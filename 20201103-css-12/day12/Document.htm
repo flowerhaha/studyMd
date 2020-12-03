@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)file:///Users/zhangxk/Desktop/2020%E5%89%8D%E7%AB%AF/20201118-js-23/dom.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>p1</p>
+    <div id="main">
+        <p id="p2">p2</p>
+        <span class="box">span1</span>
+        <span class="box">span2</span>
+    </div>
+    <span class="box">span3</span>
+    <input type="text" name="userName">
+    <a href="file:///Users/zhangxk/Desktop/2020%E5%89%8D%E7%AB%AF/20201118-js-23/dom.html" id="a1">浮动的爽肤水</a>
+
+
+<script>
+    //id的上下文只能是document
+    var oh = document.getElementById("oh");
+    // 通过name名字获取一组元素，它的上下文只能是document
+    var names = document.getElementsByName("userName");
+    // 通过标签名
+    var ps = main.getElementsByTagName("p");
+    // 通过类名获取一组元素
+    var obox = main.getElementsByClassName("box");
+    // 通过选择器选择你想要的元素（单个的）
+    var ele = main.querySelector("p");
+    // var ele = document.querySelector("#main>p");
+
+    //通过选择器获取多个,返回值是类数组
+    var spans = main.querySelectorAll("span");
+
+    //注意：querySelector 和querySelectorAll 在ie6-ie8 下不兼容
+
+    document.head;
+
+
+    // 获取屏幕的宽高
+
+
+</script></body></html>

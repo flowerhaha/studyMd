@@ -1,0 +1,117 @@
+.whiteArea{
+    background: #fff;
+}
+.md{
+    width: 1220px;
+    margin: 0 auto;
+}
+.navBox{
+    height: 84px;
+}
+.logo{
+    width: 176px;
+    height: 52px;
+    overflow: hidden;
+    float: left;
+    margin-top: 16px;
+}
+.navBox .logo>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/zf-pc/logo.png) center center no-repeat;
+}
+.navMid{
+    float: left;
+    margin-top: 38px;
+}
+.navMid>a{
+    float: left;
+    font-size: 14px;
+    color: #2A2A2A;
+    margin-left: 45px;
+}
+.navRight{
+    float: right;
+}
+.navRight>a{
+    float: left;
+    font-size: 14px;
+    color: #666767;
+}
+.navRight>.cart{
+    float: left;
+    width: 72px;
+    height: 24px;
+    background: url(../images/zf-pc/cart.png) left center no-repeat;
+    text-indent: 28px;
+    line-height: 24px;
+    margin-top: 33px;
+}
+.navRight>a:nth-child(2),.navRight>a:nth-child(3){
+    margin-top: 35px;
+}
+.navRight>a:nth-child(2){
+    margin-right: 35px;
+    margin-left: 39px;
+}
+.bannerBox{
+    width: 100%;
+    height: 360px;
+    background: url(../images/zf-pc/banner1.png) center center no-repeat;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 39px;
+}
+.bannerList{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.bannerList>li{
+    padding: 0 25px;
+}
+.bannerList>li:hover{
+    background: rgba(11,11,11,.3);
+}
+.bannerList>li a{
+    font-size: 14px;
+    color: #FDFDFE;
+    display: block;
+    height: 72px;
+    line-height: 72px;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}
+.bannerList>li a>span{
+    float: left;
+}
+.bannerList>li a>img{
+    float: right;
+    margin-top: 30px;
+}
+.bannerList>li:last-child a{
+    border: none;
+}
+/* shizhan */
+.lists h3{
+    font-size: 16px;
+    color: #2D2D2D;
+    margin-bottom: 19px;
+}
+.listsLink{
+    position: relative;
+}
+.listsLink .listsIn{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 255px;
+    height: 149px;
+    background: rgba(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    padding: 15px;
+    box-sizing: border-box;
+}

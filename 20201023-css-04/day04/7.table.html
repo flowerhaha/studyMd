@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }  
+    </style>
+</head>
+<body>
+    <!-- 表格 -->
+    <table border="1" width="500" height="300" cellspacing="50" cellpadding="50">
+        <!-- caption代表表格的标题 -->
+        <caption>dsdhcduihdu</caption>
+        <tr>
+            <th>111</th>
+            <th>222</th>
+            <th>333</th>
+        </tr>
+        <tr>
+            <!-- 跨列：合并列 -->
+           <td colspan="2">111</td>
+           <td>333</td>
+       </tr>
+       <tr>
+            <td>111</td>
+            <td rowspan="2">222</td>
+            <td>333</td>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>222</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+        .love{
+            width: 300px;
+            height: 285px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -143px;
+        }
+        .love>img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .love>img:nth-child(1){
+            animation: love 8s linear infinite;
+        }
+        .love>img:nth-child(2){
+            animation: love 8s linear 2s infinite;
+        }
+        .love>img:nth-child(3){
+            animation: love 8s linear 4s infinite;
+        }
+        .love>img:nth-child(4){
+            animation: love 8s linear 6s infinite;
+        }
+        @keyframes love{
+            0%{
+                transform: scale(0);
+                opacity: 0;
+            }
+            25%{
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50%{
+                transform: scale(2);
+                opacity: 1;
+            }
+            75%{
+                transform: scale(3);
+                opacity: 0.5;
+            }
+            100%{
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="love">
+        <img src="love.png" alt="">
+        <img src="love.png" alt="">
+        <img src="love.png" alt="">
+        <img src="love.png" alt="">
+    </div>
+</body>
+</html>

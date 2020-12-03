@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 0 auto;
+            position: relative;
+        }
+        .box1,.box2{
+            width: 100px;
+            height: 100px;
+            background: magenta;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .box1{
+            z-index: 10;
+        }
+        .box2{
+            background: mediumaquamarine;
+        }
+    </style>
+</head>
+<body>
+    <!-- 对于定位的元素，我们可以通过z-index来控制它的层级关系，z-index 这个值越大，就越靠上 -->
+    <div class="main">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+    </div>
+</body>
+</html>

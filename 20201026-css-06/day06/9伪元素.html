@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        伪元素：通过css样式去更改html的结构，不是真的在结构中添加
+        注意：在用伪元素的时候，content这个属性值不能省，可以写成“”
+         */
+         p::after{
+             content: "hahahahah";
+             color: red;
+         }
+         p::before{
+             content: "dddd";
+             color: blue;
+         }
+    </style>
+</head>
+<body>
+    <p>dedededwed</p>
+</body>
+</html>
