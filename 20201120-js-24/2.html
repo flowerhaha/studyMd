@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中奖</title>
+    <style>
+    #prize{
+        width:200px;
+        height:50px;
+        border:1px solid green;
+    }
+    </style>
+</head>
+<body>
+    <div class="prize" id="prize"></div>
+</body>
+</html>
+<script>
+    function getCode(){
+        var str="0123456789";
+        var result="";
+        for(var i=0;i<4;i++){
+            var index=Math.floor(Math.random()*9);
+            result+=str[index];
+        }
+        return result;
+    }
+    var prize=document.getElementById("prize");
+    prize.innerHTML=getCode();
+    var time=new Date().getTime();
+    var time1=setInterval(function(){
+        var newTime=new Date().getTime();
+        var dif=(newTime-time)/1000;
+        if(dif>5){
+            clearInterval(time1);
+        }
+       var res= getCode();
+       prize.innerHTML=res;
+    },1000)
+    
+   
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #prize{
+            width: 100px;
+            height: 40px;
+            margin: 0 auto;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="prize"></div>
+</body>
+</html>
+<script>
+    function prizeDraw(str){
+        var res = "";
+        for(var i=0;i<4;i++){
+            var index = Math.round(Math.random()*(str.length-1)); 
+            res+=str[index];
+        }
+        return res;
+    }
+    var str = "0123456789";
+    var prize = document.getElementById("prize");
+    // prize.innerText = prizeDraw(str);
+    var time1 = setInterval(function(){
+        prize.innerText = prizeDraw(str);
+        // console.log(prize.innerText);
+    },1000)
+    var time2 = setTimeout(function(){
+        clearInterval(time1);
+        time1 = null;
+        clearTimeout(time2); //考虑性能
+        time2 = null;
+    },10000);
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+                margin: 0;
+                padding: 0;
+            }
+        .main{
+            width: 200px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        .code{
+            width: 60px;
+            height: 20px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+         }   
+    </style>
+   
+</head>
+<body>
+    <div class="main">
+        <div class="code" id="code"></div>
+        <button id="btn">获取验证码</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    // 获取4位的大小写字母和0-9之间的数字 的验证码
+    var str = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+    var btn = document.getElementById("btn");
+    var code = document.getElementById("code");
+    /*
+    btn.onclick = function(){
+        // 最终要展示的四位数的字符串
+        var newCode = "";  
+        for(var i=0;i<4;i++){
+            // Math.random()*61  [0-61)
+            var index = Math.round(Math.random()*61); //字符串的索引0-61  共62个数
+            newCode+=str[index];
+        }
+        code.innerText = newCode;
+    }
+    */ 
+    //封装一个函数
+    function getCode() {
+        var newCode = "";
+        for(var i=0;i<4;i++){
+            var index = Math.round(Math.random()*(str.length-1));
+            newCode+=str[index];
+        }
+        return newCode;
+    }
+    // 可以把id当成变量来使用
+    code.innerText = getCode(); //页面刚加载的时候也有验证码存在
+    btn.onclick = function(){
+        code.innerText = getCode();   //传参？？？？
+    }
+</script>

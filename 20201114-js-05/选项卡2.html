@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .main{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .main li{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #333;
+            display: inline-block; 
+            margin-right: 10px;
+            position: relative;
+            top: 1px;
+            
+        }
+        .main>div{
+            height: 300px;
+            line-height: 300px;
+            border: 1px solid #333;
+            text-align: center;
+            display: none;
+        }
+        .main li.current{
+            background: lightcoral;
+            border-bottom-color: lightcoral;
+        }
+        .main>div.current{
+            display: block;
+            background: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+        <ul>
+            <li class="current">音乐</li>
+            <li>电视</li>
+            <li>综艺</li>
+        </ul>
+        <div class="current">音乐</div>
+        <div>电视</div>
+        <div>综艺</div>
+    </div>
+</body>
+</html>
+<script>
+    //点击每个li的时候，li动态加current属性，div里面的内容变化，动态显示current属性
+    var main = document.getElementById("main");
+    var lis = main.getElementsByTagName("li");
+    var box = main.getElementsByTagName("div");
+
+    for(var i=0;i<lis.length;i++){
+        // 函数执行的方式一种是调用，一种是点击事件
+        // for循环只是存储代码，没有触发函数，函数里面的内容会分别开辟堆内存作为字符串进行存储，是死代码，for循环结束后此时i=3,用户再点击的时候就会触发函数执行，就会报错
+        lis[i].index = i;  //解决方式
+        lis[i].onclick = function() {
+            // 先清空
+            for(var i=0;i<lis.length;i++){
+                lis[i].className = "";
+                box[i].className = "";
+            }
+            this.className = "current";
+            box[this.index].className = "current";
+        }
+
+    }
+</script>

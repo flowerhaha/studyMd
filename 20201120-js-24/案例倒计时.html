@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: palevioletred;
+        }
+        #time{
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 38px;
+            height: 300px;
+            line-height: 300px;
+            border: 2px dashed lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="time"></div>
+</body>
+</html>
+<script>
+    // 获取现在时间
+    // 目标时间：“2020-11-20 17:00:00”
+    //时间差： new Date("2020-11-20 17:00:00")-new Date(); //单位是毫秒
+    /*
+        var targetStr = "2020-11-20 17:00:00";
+        var targetMille = new Date(targetStr).getTime();
+        var time = new Date().getTime();
+        var timeDifferance = targetMille - time;
+    */
+   function zeroAdd(num){
+       return num<10?"0"+num:num;
+   }
+    function timeDown(targetStr){
+        var timeDifferance = new Date(targetStr) - new Date();
+        // 考虑细节
+        if(timeDifferance<=0){
+            clearInterval(timer);
+            timer = null;
+            return "目标时间已超时！"
+        }
+        var hours = timeDifferance/(3600*1000);
+        var minutes = (hours-Math.floor(hours))*60;
+        var seconds = (minutes-Math.floor(minutes))*60;
+        return zeroAdd(Math.floor(hours))+"时"+zeroAdd(Math.floor(minutes))+"分"+zeroAdd(Math.floor(seconds))+"秒";
+    }
+    var targetStr = "2020-11-20 17:00:00";
+    var time = document.getElementById("time");
+    time.innerText = timeDown(targetStr);
+    var timer = setInterval(() => {
+        time.innerText = timeDown(targetStr);
+    }, 1000);
+    
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p>p1111</p>
+        <p id="p2">p2</p>
+        <p>p3</p>
+        <span>span</span>
+    </div>
+</body>
+</html>
+<script>
+    // 自己手动封装一个获取节点下面的所有子元素，要求考虑兼容性。children有兼容性
+    function myChildren(context){
+        var allNodes = context.childNodes; //获取当前节点所有子节点；
+        // console.log(allNodes);
+        var ary = [];
+        for(var i=0;i<allNodes.length;i++){
+            if(allNodes[i].nodeType == 1){
+                ary.push(allNodes[i]);
+            }
+        }
+        return ary;
+    }
+    var res = myChildren(main);
+
+    // 自己手动封装一个previousElementSibling，要兼容
+    function myPreviousSibling(ele){
+        var pre = ele.previousSibling;
+        while(pre && pre.nodeType !== 1){
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+     var res1 = myPreviousSibling(p2); //Z
+</script>

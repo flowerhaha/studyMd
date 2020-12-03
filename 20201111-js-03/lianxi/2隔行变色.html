@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        body{
+            background: lightcyan;
+        }
+        .main{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .main>li{
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+        }
+        /* .main>li:nth-child(odd){
+            background: yellow;
+        }
+        .main>li:nth-child(even){
+            background: yellowgreen;
+        }
+        .main>li:hover{
+            background: violet;
+        } */
+    </style>
+</head>
+<body>
+    <ul id="main" class="main">
+        <li>是否i无法和我i放假诶我放假诶减肥i肉回国</li>
+        <li>是否i无法和我i放假诶我放假诶减肥i肉回国</li>
+        <li>是否i无法和我i放假诶我放假诶减肥i肉回国</li>
+        <li>是否i无法和我i放假诶我放假诶减肥i肉回国</li>
+        <li>是否i无法和我i放假诶我放假诶减肥i肉回国</li>
+        <li>是否i无法和我i放假诶我放假诶减肥i肉回国</li>
+    </ul>
+</body>
+</html>
+<script>
+    var main = document.getElementById("main");
+    var lis = main.getElementsByTagName("li");
+    for(var i=0;i<lis.length; i++){
+        // console.log(lis[i]);
+        if(i%2==0){
+            lis[i].style.backgroundColor = "yellow";
+        }else{
+            lis[i].style.backgroundColor = "yellowgreen";
+        }
+        lis[i].onmouseover = function(){
+            // console.log(i);//6
+            // 把原来的颜色保存一下
+           this.oldColor = this.style.backgroundColor;
+            this.style.backgroundColor = "pink";
+        }
+        lis[i].onmouseout = function() {
+            this.style.backgroundColor = this.oldColor;
+        }
+    }
+</script>

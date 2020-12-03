@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .code{
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="code" id="code"></div>
+    <button id="btn">获取验证码</button>
+</body>
+</html>
+<script>
+    var str = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM11234567890"
+    var code = document.getElementById("code");
+    var btn = document.getElementById("btn");
+    function getCode(str){
+        var res = "";
+        for(var i=0;i<4;i++){
+            var index = Math.round(Math.random()*(str.length-1));
+            if(res.indexOf(str[index])>-1){
+                i--;
+                continue;
+            }
+            res+=str[index];
+        }
+        return res;
+    }
+    code.innerText = getCode(str);
+    btn.onclick = function(){
+        code.innerText = getCode(str);
+    }
+</script>

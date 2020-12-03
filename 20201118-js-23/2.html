@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       
+    </style>
+
+</head>
+<body>
+   <span id="span1">1</span>
+   <ul id="main">
+       <!-- 我是注释 -->
+       <li>选择珠峰的，都是明智的！</li>
+       <li>选1111择珠峰的，都是明智的！</li>
+       <li id="lis3">选择珠峰的，都是明智的！</li>
+       <li>选择珠峰的，都是明智的！</li>
+   </ul>
+   <span>2</span>
+</body>
+</html>
+<script>
+    //自己手动封装一个获取节点下面的所有子元素，要求考虑兼容性。
+    function myChildren(context){
+        var allNodes = context.childNodes;
+        //console.log(res);
+        var ary = [];
+        for(var i=0;i<allNodes.length;i++){
+            if(allNodes[i].nodeType == 1){
+                ary.push(allNodes[i]);
+            }
+        }
+        return ary;
+    }
+    var main = document.getElementById("main");
+    console.log(myChildren(main));  // [li, li, li#lis3, li]
+
+    // 自己手动封装一个perviousElementSibling，要兼容
+    var lis3 = document.getElementById("lis3");
+    function myPreviousSibling(ele){
+        var pre = ele.previousSibling;
+        while(pre && pre.nodeType !== 1){
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+    var res = myPreviousSibling(lis3);
+    var res2 = myPreviousSibling(span1);
+</script>

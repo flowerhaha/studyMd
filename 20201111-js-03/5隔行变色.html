@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        body{
+            background: lightblue;
+        }
+        .main{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .main>li{
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="main" id="main">
+        <li>走在前沿的专家级课程：珠峰微信小程序实战开发课程</li>
+        <li>走在前沿的专家级课程：珠峰微信小程序实战开发课程</li>
+        <li>走在前沿的专家级课程：珠峰微信小程序实战开发课程</li>
+        <li>走在前沿的专家级课程：珠峰微信小程序实战开发课程</li>
+        <li>走在前沿的专家级课程：珠峰微信小程序实战开发课程</li>
+        <li>走在前沿的专家级课程：珠峰微信小程序实战开发课程</li>
+    </ul>
+</body>
+</html>
+<script>
+    var omain = document.getElementById("main");
+    var lis = omain.getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++){
+        if(i%2==0){
+            lis[i].style.backgroundColor = "green";
+        }else{
+            lis[i].style.backgroundColor = "yellow";
+        }
+        /*
+         var oldColor = lis[i].style.backgroundColor;
+            当是偶数的时候背景颜色是"green"，但是当是奇数的时候"yellow"会覆盖掉之前的绿色
+         */
+    //    let oldColor = lis[i].style.backgroundColor;
+
+        // 给每个li绑定鼠标划过事件
+        lis[i].onmouseover = function(){
+            // 自定义属性
+            // 把原来的颜色存到这个元素身上,相当于给lis[i]添加了一个oldColor属性，每一次改变都会被保存，而声明变量会被覆盖
+            this.oldColor = this.style.backgroundColor;
+            // 改变背景颜色
+            this.style.backgroundColor = "pink";
+        }
+        // 鼠标离开时候，还原原来li的背景色
+        lis[i].onmouseout = function(){
+            this.style.backgroundColor = this.oldColor;
+        }
+    }
+</script>

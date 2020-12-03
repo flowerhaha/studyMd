@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+                margin: 0;
+                padding: 0;
+            }
+        .main{
+            width: 200px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        .code{
+            width: 60px;
+            height: 20px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+         }   
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="code" id="code"></div>
+        <button id="btn">获取验证码</button>
+    </div>
+</body>
+</html>
+<script>
+    // 获取4位的大小写字母和0-9之间的数字 的验证码
+    function getCode(str){
+        var res = "";
+        while(res.length<4){
+            var index = Math.round(Math.random()*(str.length-1));
+            if(res.indexOf(str[index])==-1){
+                res+=str[index];
+            }
+        }
+        return res;
+    }
+    var str = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+    var btn = document.getElementById("btn");
+    var code = document.getElementById("code");
+    code.innerText = getCode(str);
+    btn.onclick = function(){
+        code.innerText = getCode(str);
+    }
+</script>

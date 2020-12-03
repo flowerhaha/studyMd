@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #box{
+            width: 500px;
+            margin: 0 auto;
+        }
+        #box>li{
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="box">
+        <li>舒服的风景回顾回顾呼呼如何</li>
+        <li>舒服的风景回顾回顾呼呼如何</li>
+        <li>舒服的风景回顾回顾呼呼如何</li>
+        <li>舒服的风景回顾回顾呼呼如何</li>
+        <li>舒服的风景回顾回顾呼呼如何</li>
+        <li>舒服的风景回顾回顾呼呼如何</li>
+    </ul>
+</body>
+</html>
+<script>
+    var box = document.getElementById("box");
+    var lis = box.getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++){
+        if(i%2){
+            lis[i].style.backgroundColor = "yellow";
+        }else{
+            lis[i].style.backgroundColor = "yellowgreen";
+        }
+        lis[i].onmouseover = function(){
+            this.oldColor = this.style.backgroundColor;
+            this.style.backgroundColor = "pink";
+        }
+        lis[i].onmouseout = function(){
+            this.style.backgroundColor = this.oldColor;
+        }
+    }
+</script>

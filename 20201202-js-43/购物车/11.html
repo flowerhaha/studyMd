@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #main{
+            width: 479px;
+            height: 591px;
+            background: url(image/bg1.png) center center no-repeat;
+            margin: 0 auto;
+            position: relative;
+        }
+        .shop-list{
+            padding: 30px;
+            color: #fff;
+        }
+        .shop-list li{
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .shop-list button{
+            width: 52px;
+            height: 44px;
+            border: none;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;;
+        }
+        .add{
+            background: url(image/add.png);
+        }
+        .sub{
+            background: url(image/sub.png);
+        }
+        .num{
+            width: 44px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 5px;
+            text-align: center;
+            background: #fff;
+            color: #333;
+            float: left;
+            margin-right: 10px;
+        }
+        .price-info{
+            width: 214px;
+            height: 36px;
+            line-height: 36px;
+            margin-left: 10px;
+            float: left;
+            border-radius: 5px;
+            background: #171818;
+            color: #878787;
+            padding-left: 15px;
+            box-sizing: border-box;
+        }
+        .shop-total{
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            color: #878787;
+            overflow: hidden;
+        }
+        .shop-total p{
+            display: flex;
+            align-items: center;
+            float: left;
+        }
+        .shop-total p:first-child{
+            margin-right: 20px;
+        }
+        .shop-total b{
+            width: 44px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 5px;
+            background: #fff;
+            text-align: center;
+            display: inline-block;
+            margin: 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <ul class="shop-list">
+            <li>
+                <button class="add" flag="1"></button>
+                <b class="num">0</b>
+                <button class="sub" flag="0"></button>
+                <span class="price-info">
+                    单价：<b class="item-price">1</b>元 小计：<b class="total-item"></b>元
+                </span>
+            </li>
+            <li>
+                <button class="add" flag="1"></button>
+                <b class="num">0</b>
+                <button class="sub" flag="0"></button>
+                <span class="price-info">
+                    单价：<b class="item-price">2</b>元 小计：<b class="total-item"></b>元
+                </span>
+            </li>
+            <li>
+                <button class="add" flag="1"></button>
+                <b class="num">0</b>
+                <button class="sub"  flag="0"></button>
+                <span class="price-info">
+                    单价：<b class="item-price">3</b>元 小计：<b class="total-item"></b>元
+                </span>
+            </li>
+        </ul>
+        <div class="shop-total">
+            <p>商品共合计：
+                <b class="total-num"></b>件
+            </p>
+            <p>共花费了：
+                <b class="total-price"></b>元
+            </p>
+            <br>
+            <br>
+            <p>选中商品最贵的商品单价：
+                <b class="height-item"></b>元
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var buttons = document.querySelectorAll("button");
+    var numAry = document.querySelectorAll(".shop-list .num");
+    var numTotalEle = document.querySelector(".shop-total .total-num");
+    var ItemPriceAry = document.querySelectorAll(".total-item");
+    var totalPriceEle = document.querySelector(".shop-total .total-price");
+    var lisAry = document.querySelectorAll("li");
+    var heightItem = document.querySelector(".height-item");
+    for(var i=0;i<buttons.length;i++){
+        buttons[i].onclick = function(){
+            var flag = this.getAttribute("flag");
+            var parentEle = this.parentNode;
+            var numEle = parentEle.querySelector(".num");
+            var itemPrice = parentEle.querySelector(".item-price").innerText;
+            var totalItem = parentEle.querySelector(".total-item");
+            var oldNum = numEle.innerText;
+            var nowNum = 0;
+            // 初始化总件数
+            var numTotal = 0;
+            // 初始化总计
+            var totalPrice = 0;
+            var itemAry = [];
+            var moneyAry = null;
+            if(flag == 1){
+                nowNum = Number(oldNum)+1;
+            }else{
+                if(Number(oldNum)-1 < 0){
+                    nowNum = 0;
+                    return;     //重要
+                }
+                nowNum = Number(oldNum)-1;
+            }
+            numEle.innerText = nowNum;
+            totalItem.innerText = Number(itemPrice) * nowNum;
+            for(var i=0;i<numAry.length;i++){
+                numTotal+=Number(numAry[i].innerText);
+                totalPrice+=Number(ItemPriceAry[i].innerText);
+            }
+            numTotalEle.innerText = numTotal;
+            totalPriceEle.innerText = totalPrice;
+            for(var i=0;i<lisAry.length;i++){
+                var itemNum = lisAry[i].querySelector(".num");
+                if(itemNum.innerText > 0){
+                    var value = lisAry[i].querySelector(".item-price").innerText;
+                    itemAry.push(value);
+                }
+            }
+            // console.log(itemAry)
+            if(itemAry.length<1){
+                moneyAry = "---";
+            }else{
+                moneyAry = itemAry.sort((a,b)=>a-b)[itemAry.length-1];
+            }
+            heightItem.innerText = moneyAry;
+            // console.log(moneyAry);
+        }
+    }
+</script>
