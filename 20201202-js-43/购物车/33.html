@@ -74,17 +74,55 @@
 <script>
     //1.获取li相应的元素，然后给每一个i绑定点击事件
     let list = document.getElementsByTagName("li");
+    let ems = document.querySelectorAll(".info em");
     //2.循环给每一个li里的i标签绑定点击事件
     for(var i=0;i<list.length;i++){
         addClick(list[i]);
     }
     function addClick(li){ //封装的函数
-        let tags = li.document.getElementsByTagName("i");
+        let tags = li.getElementsByTagName("i"); //类数组集合
+        let em = li.getElementsByTagName("em")[0];
+        let strong = li.getElementsByTagName("strong");
         tags[0].onclick = function(){
-            console.log("-");
+            // console.log("-");
+            if(Number(em.innerHTML)<=0){
+                em.innerHTML = 0;
+            }else{
+                em.innerHTML = em.innerHTML - 1;  //减法不会字符串拼接
+            }
+            strong[1].innerHTML = Number(em.innerHTML) * parseFloat(strong[0].innerHTML)+"元";
+            computed();
         }
         tags[1].onclick = function(){
-            console.log("+");
+            // console.log("+");
+            em.innerHTML = Number(em.innerHTML) + 1;
+            strong[1].innerHTML = Number(em.innerHTML) * parseFloat(strong[0].innerHTML)+"元";
+            computed();
+        }
+        function computed(){
+            //下面三个值，无论上面的哪一个变化，它们都会变化；
+            /*
+            1、先创建一个变量，用来存储累加每一个em元素的值
+            2、循环，把每一个em的值累加起来
+            3、把当前累加的值显示到页面上
+            */
+           let totalNum = null;
+           let allPrice = null;
+           let numAry = [0];  //添加0  解决没有选择时出现undefined的问题
+           for(var i = 0;i<list.length;i++){
+               var emItem = list[i].getElementsByTagName("em")[0];
+               var strongItem = list[i].getElementsByTagName("strong");
+               totalNum += Number(emItem.innerText);
+               allPrice += parseFloat(strongItem[1].innerText);
+               if(Number(emItem.innerText)>0){
+                numAry.push(parseFloat(strongItem[0].innerText));
+               }
+           }
+           ems[0].innerText = totalNum;
+           ems[1].innerText = allPrice;
+        //    numAry.sort((a,b)=>b-a);
+        //    ems[2].innerText = numAry[0];
+           ems[2].innerText = Math.max(...numAry);
         }
     }
 </script>

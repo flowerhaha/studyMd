@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .list{
+            width: 800px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+        }
+        .list li{
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px dashed lightcoral;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            line-height: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+        <ul class="list" id="list">
+            <li>6</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <button>倒序</button>
+ 
+</body>
+</html>
+<script>
+    var lis = document.querySelectorAll("li");
+    var lisAry = [].slice.call(lis);
+    var list = document.querySelector(".list");
+    var button = document.querySelector("button");
+    var flag = 1;
+    //dom影射：js操作的元素和页面中的元素存在映射关系
+    //dom回流：当页面中元素的位置，大小或结构、定位发生改变，会引发浏览器对当前页面的结构进行重新的计算；非常耗性能的；
+    //dom的重绘：当元素的背景、透明度、颜色发生变化，那么浏览器会对元素进行重新描绘；这个过程就是浏览器的重绘
+    button.onclick = function(){
+        flag *= -1;
+        lisAry.sort(function(a,b){
+            return (a.innerHTML-b.innerHTML)*flag;
+        });
+        for(var i=0;i<lisAry.length;i++){
+            list.appendChild(lisAry[i]);
+        }
+    }
+</script>

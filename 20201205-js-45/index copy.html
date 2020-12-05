@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商城排序</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+       .nav{
+           height: 48px;
+           line-height: 48px;
+           display: flex;
+           background: #fff;
+           font-size: 18px;
+       }
+       .sort{
+           padding: 0 40px 0;
+       }
+       .nav a{
+           margin-right: 60px;
+           position: relative;
+       }
+       .nav a .triangle{
+            border: 6px solid #333;
+            width: 0;
+       }
+       .nav a .triangle:nth-child(1){
+           border-color: #555 transparent transparent transparent;
+           position: absolute;
+           top: 25px;
+           right: -18px;
+       }
+       .nav a .triangle:nth-child(2){
+           border-color: transparent transparent #555 transparent;
+           position: absolute;
+           bottom: 26px;
+           right: -18px;
+       }
+       .info{
+           padding-top: 20px;
+           display: flex;
+           flex-wrap: wrap;
+       }
+       .info li{
+           width: 222px;
+           height: 240px;
+           margin: 0 15px 15px 0;
+           background: #fff;
+           padding: 10px 20px 10px 20px;
+           box-sizing: border-box;
+       }
+       .info li a{
+           width: 100%;
+           height: 100%;
+           font-size: 14px;
+           color: #555;
+       }
+       .info li a img{
+           width: 114px;
+           display: block;
+           margin: 0 auto;
+           margin-bottom: 20px;
+       }
+       .title,.time{
+           padding-bottom: 10px;
+       }
+       .price-info{
+           display: flex;
+           justify-content: space-between;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+            <span class="sort">排序</span>
+            <a href="">上架时间
+                <span class="triangle"></span>
+                <span class="triangle"></span>
+            </a>
+            <a href="">热度
+                <span class="triangle"></span>
+                <span class="triangle"></span>
+            </a>
+            <a href="">价格
+                <span class="triangle"></span>
+                <span class="triangle"></span>
+            </a>
+        </div>
+        <ul class="info">
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/1.jpg" alt="">
+                    <p class="title">HUAWEI全网通版（亮黑色）</p>
+                    <p class="time">2017-03-15</p>
+                    <p class="price-info"><span>198元</span><span>499</span></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
