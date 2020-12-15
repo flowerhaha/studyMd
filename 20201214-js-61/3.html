@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">1111</div>
+    <ul>
+        <li>1</li>
+        <li class="second">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    let res = $('#main');
+    // console.log(res);
+    // console.log($('li:gt(2)'));
+    // console.log($('li').eq(2));
+    // console.log($('li:lt(2)'));
+
+//    console.log($('ul').find('li'));  //find获取对应的后代元素
+//    console.log($('li').filter('.second'));  //filter是过滤同级元素
+
+//获取/设置元素的内容
+// console.log($('#main').html());
+// console.log($('#main').html(9999));
+
+//事件
+//$('#box').on('事件类型',函数)
+//$('#box').off()
+function fn(){
+    console.log(200);
+}
+//$('#box').on('click',fn);
+
+$('ul li').click(function(){
+    console.log(100);
+})
+
+//each功能类似与之前的forEach
+$('ul li').each(function(index,item){
+    //回调函数的第一个形参是索引index，第二个形参是每一项
+})
+
+</script>

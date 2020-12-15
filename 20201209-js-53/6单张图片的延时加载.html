@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          padding: 0;
+          margin: 0;
+        }
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+        }
+    
+        #box {
+          width: 300px;
+          height: 200px;
+          margin: 800px auto;
+        }
+    
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+</head>
+<body>
+    <div id="box">
+        <img src="./img/default.jpg" true-img="./img/11.jpg" alt="">
+    </div>
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+    let box = document.getElementById("box");
+    let img = document.getElementsByTagName("img")[0];
+    //当图片的下边框与浏览器可视窗口的下边框重合时，显示图片
+    function check(){
+        if(img.flag){  //刚进来时img.flag为undefined，为false
+            return;
+        }
+        let boxH = box.offsetHeight;  //当前图片盒子的总高度
+        let boxT = utils.offset(box).top;  //获取图片盒子距离body的上偏移量
+        let winH = utils.win('clientHeight');  //屏幕的高度
+        let winT = utils.win('scrollTop');  //浏览器滚动条卷曲的高度
+        //console.log(boxH+boxT,winH+winT);
+        if(winH+winT >= boxH+boxT){
+            let trueImg = img.getAttribute("true-img");
+            //动态创建一个img标签用来检测当前的真实路径对不对
+            // let newImg = document.createElement('img'); //和下边是等价的
+            let newImg = new Image;
+            newImg.src = trueImg;  //把真实的路径给检测的img去请求
+            newImg.onload = function(){
+                //如果当前路径是正确的，那onload对应的函数就会执行，
+                // 在这个函数里把真实的路径再赋值给页面的img
+                img.src = trueImg;
+                img.flag = true;  //让图片只加载一次
+                fadeIn(img);
+            }
+            newImg.onerror = function(){
+                // 如果当前路径是错误的，那onerror对应的函数就会执行
+                img.src = './img/10.jpg';
+                img.flag = true;
+                //可以给当前图片赋一张默认的加载错误图片
+            }
+        }
+    }
+    // 让图片渐渐的显示出来
+    function fadeIn(img){
+        img.style.opacity = 0.01;
+        let imgOpacity = Number(img.style.opacity);
+        let timer = setInterval(()=>{
+            imgOpacity += 0.01;
+            img.style.opacity = imgOpacity; //加完之后需要重新赋值
+            if(imgOpacity>=1){
+                clearInterval(timer);
+                timer = null;
+            }
+        },17)
+    }
+    window.onscroll = check;
+</script>

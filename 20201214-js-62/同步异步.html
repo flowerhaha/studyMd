@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+     // 当打开一个页面的时候，浏览器会分配一个线程来执行页面的代码，而且把全部的同步代码执行完成以后才会执行异步代码
+     //当主线程执行的时候，如果遇到异步任务就放到异步任务队列中（让浏览器再分配一个线程来执行它，但是这时候异步任务不输出），当主任务执行完成之后，主线程空闲来，会异步任务队列中拿满足输出条件的任务到主任务队列中来执行（不断循环这个过程，就叫做事件循环event Loop）
+
+    // 主任务队列(同步代码) 异步任务队列(异步代码)
+
+    console.log(100);
+    setTimeout(() => {
+      console.log(200);
+    }, 20)
+    console.time()
+    for (let i = 0; i < 100000000; i++) { }; //99ms
+    console.timeEnd()
+    setTimeout(() => {
+      console.log(300);
+    },19);
+    console.log(400);  // 100 400 200 300
+
+
+    //定时器 事件 ajax promise async await
+
+</script>

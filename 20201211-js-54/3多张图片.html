@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin:500px auto;
+        }
+        div img{
+            display: block;
+            margin: auto;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./img/default.jpg" class="bg" true-img="./img/1.jpg" alt="">
+        <img src="./img/default.jpg" class="bg" true-img="./img/2.jpg" alt="">
+        <img src="./img/default.jpg" class="bg" true-img="./img/3.jpg" alt="">
+        <img src="./img/default.jpg" class="bg" true-img="./img/4.jpg" alt="">
+        <img src="./img/default.jpg" class="bg" true-img="./img/5.jpg" alt="">
+    </div>
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+    let imgs = document.getElementsByTagName("img");
+    // 此函数就是判断每一张图片是否要加载的
+    function delay(){
+         // 当函数执行的时候，咱们去循环每一张图片，然后去判断每一张图片是否需要加载
+        for(let i=0;i<imgs.length;i++){
+            delayImg(imgs[i]);
+        }
+    }
+    function delayImg(img){
+        // if(img.flag) return;
+        let imgT = img.offsetHeight;
+        let imgOfT = utils.offset(img).top;
+        let winT = utils.win('clientHeight');
+        let winSt = utils.win('scrollTop');
+        if(winT+winSt >= imgT+imgOfT){
+            let trueSrc = img.getAttribute("true-img");
+            let newImg = new Image;
+            newImg.src = trueSrc;
+            newImg.onload = function(){
+                img.src = trueSrc;
+                img.className = '';   //此行代码能实现图片只加载一次
+                // img.flag = true;
+            }
+            
+        }
+    }
+    delay();
+    window.onscroll = delay;
+</script>

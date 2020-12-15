@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="width:300px">1111</div>
+</body>
+</html>
+<script>
+    //元素样式
+    //ele.style:获取或者设置元素的行间样式
+    //获取的值都是字符串类型的
+    //还有就是样式的名字必须是驼峰命名法
+    //box.style.backgroundColor = "red";
+    //getComputedStyle:获取当前元素计算后最终的样式。是window上的一个方法(只能获取不能设置)
+    //如果当前元素的样式名不是一个单词，也得用驼峰命名法来获取
+    //getcpmputedStyle在ie6—8之间不能用
+    //getComputedStyle(ele,'伪类')//方法的返回值是一个对象，对象里就是当前元素所有的计算后的样式
+    //console.log(getComputedStyle(box).width);
+    //console.log(getComputedStyle(box).backgroundColor);
+
+
+    //在ie下有专门的属性来获取元素的计算后样式
+    //ele.currentStyle  //他是一个属性，里面存储的是当前元素的所有的计算后的样式
+    //console.log(box.currentStyle.width);
+    function getCss(curEle, attr) {
+    var val = null;
+    if ('getComputedStyle' in window) {
+        val = getComputedStyle(curEle)[attr];
+    } else {
+        val = curEle.currentStyle[attr];
+    }
+    var reg = /\d{1,}/;
+    // var reg = /^(width|height|padding|margin|fontSize|lineHeight|left|top|right|bottom|opacity)$/;
+    if (reg.test(val)) {
+        // console.log("1111",attr);
+        val = parseFloat(val);
+    }
+    return val;
+}
+// let w = getCss(box, 'width');
+// console.log(w);
+function setCss(ele, attr, value) {
+      // 1.先确定当前的样式需不需要单位
+      // 2.在确定当前样式用户给有没有加单位
+      var reg = /^(width|height|padding|margin|fontSize|lineHeight|left|top|right|bottom)$/;
+      if (reg.test(attr)) {
+        let number = parseFloat(value); // '100'
+        ele.style[attr] = number + 'px'
+      }
+      ele.style[attr] = value;
+    }
+
+    // setCss(box,'width','100px')
+    // setCss(box,'width','100')
+    // setCss(box,'width',100)
+function setGroupCss(ele,obj){
+    //for in 既可以遍历出私有属性也可以遍历出共有属性
+    for(var key in obj){
+        if(!obj.hasOwnProperty(key)) return;
+        setCss(ele,key,obj[key])
+    }
+}
+// setGroupCss(ele,{
+//     'width':300,
+//     'height':300
+// })
+
+//
+function css(){
+    let [ele,attr,value] = arguments;
+    if(arguments.length>2){
+        setCss(ele,attr,value)
+    }else if(typeof attr === 'object'){
+        setGroupCss(ele,attr)
+    }else{
+       return getCss(ele,attr)
+    }  
+}
+css(box, 'fontSize', '100');
+console.log(css(box, 'width'));
+css(box, {
+    width: 300,
+    height: 300,
+    backgroundColor: 'red'
+});
+
+
+    //可枚举的属性
+    //当前对象的私有属性和对象原型上的自己添加的属性都是可枚举的属性
+    //for in循环可以遍历可枚举的属性
+</script>

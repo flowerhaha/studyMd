@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          padding:0;
+          margin: 0;
+        }
+        #box {
+          width: 200px;
+          height: 200px;
+          background: green;
+          border: 10px solid yellow;
+          padding:20px;
+          margin: auto;
+          line-height: 200px;
+          /*overflow: hidden; */  /*为啥加它*/
+        }
+      </style>
+</head>
+<body>
+    <div id="box">dqdwdwdddedededededede<br/>dededededecfvfvfvfvf</div>
+</body>
+</html>
+<script>
+    // console.log(box.clientWidth);
+    // console.log(box.clientHeight);
+    function offset(ele){
+        let left=ele.offsetLeft;
+        let top=ele.offsetTop;
+        let parent=ele.offsetParent
+        while(parent !== document.body){
+            left+=parent.offsetLeft+parent.clientLeft;
+            top+=parent.offsetTop+parent.clientTop;
+            parent=parent.offsetParent;
+        }
+        return{
+            left,
+            top
+        }
+    };
+    let res=offset(box);
+    console.log(res);
+</script>

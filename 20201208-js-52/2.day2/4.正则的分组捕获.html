@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //=>身份证号码
+    // let str = "130828199012040112";
+    // let reg = /^(?:\d{6})(\d{4})(\d{2})(\d{2})\d{2}(\d)(?:\d|X)$/;
+    // console.log(reg.exec(str));
+    // console.log(str.match(reg));
+
+
+    // ["130828199012040112", "1990", "12", "04", "1", index: 0, input: "130828199012040112", groups: undefined]
+    // 第一项：大正则捕获的字符
+    // 其余项：每一个小分组捕获的结果
+    // 如果加设置了分组(只是想改变优先级，并不想捕获)，可以利用?:来设置只匹配不捕获
+
+    //--------------------------------------------------------------------------------
+    //=>既要捕获到{数字}，也想单独的把数字也获取到，例如：第一次找到 {0} 还需要单独获取0
+    // let str = "{0}年{1}月{2}日";
+    // let reg = /\{(\d+)\}/;
+    // console.log(reg.exec(str));
+    // console.log(str.match(reg));
+    //=>不设置g只匹配一次，exec和match获取的结果一致（既有大正则匹配的信息，也有小分组匹配的信息）
+    //=>如果正则加上g，在多次捕获的情况下match只能把大正则匹配的内容获取到，小分组匹配的信息无法获取
+    // reg = /\{(\d+)\}/g;
+    // console.log(str.match(reg)); // ["{0}", "{1}", "{2}"]
+    // console.log(str.matchAll(reg));
+    // for (var ss of str.matchAll(reg)) {
+    //   console.log(ss);
+    // }
+
+
+    //=>封装一个既能获取到大捕获的内容也能获取到小捕获内容的方法
+    // function execAll(str) {
+    //   // 如果正则不加g，那正则实例身上的私有属性global就是false，反之就是true
+    //   if (!this.global) {
+    //     // 直接给他捕获一次return 出去
+    //     return this.exec(str)
+    //   }
+    //   let big = [], // 创建一个大数组用来存储全局捕获的内容
+    //     small = [],  // 创建一个小数组用来存储分组捕获的内容
+    //     res = this.exec(str); // 创建一个变量，用来存储每一次捕获的内容
+    //   while (res) {
+    //     let [max,min] = res;
+    //     big.push(max);
+    //     small.push(min);
+    //     // 重复执行正则捕获这个动作，直到获取的值为null为止
+    //     res = this.exec(str);
+    //   }
+
+    //   return big.length === 0 ? null : { big, small }
+    //   // 把捕获到的内容return出去
+    //   // console.log(res)
+    // }
+    // RegExp.prototype.execAll = execAll;
+    // console.log(reg.execAll(str));
+
+    //---------------------------------------------------------------
+    // 利用matchAll进行封装
+    let str = "{0}年{1}月{2}日";
+    let reg = /\{(\d+)\}/g;
+    function execAll(str) {
+      // 如果正则不加g，那正则实例身上的私有属性global就是false，反之就是true
+      if (!this.global) {
+        // 直接给他捕获一次return 出去
+        return this.exec(str)
+      }
+      let big = [], // 创建一个大数组用来存储全局捕获的内容
+        small = [];  // 创建一个小数组用来存储分组捕获的内容
+      for (var ss of str.matchAll(reg)) {
+        // console.log(ss); // 每一次捕获的内容
+        let [max,min] = ss;
+        big.push(max);
+       small.push(min);
+      }
+
+      return big.length === 0 ? null : { big, small }
+      // 把捕获到的内容return出去
+      // console.log(res)
+    }
+    RegExp.prototype.execAll = execAll;
+    console.log(reg.execAll(str));
+    //-----------------------------------------------------------------
+    // 正则的贪婪性
+    // let str = 'asd2019asd2020';
+    //=>正则捕获的贪婪性：默认情况下，正则捕获的时候，是按照当前正则所匹配的最长结果来获取的
+    // let reg = /\d+/g;
+    // console.log(str.match(reg)); //=>["2019","2020"]
+    
+    //=>在量词元字符后面设置？：取消捕获时候的贪婪性（按照正则匹配的最短结果来获取）
+    // reg = /\d+?/g;
+    // console.log(str.match(reg)); //=>["2", "0", "1", "9", "2", "0", "2", "0"]
+  </script>
+</body>
+
+</html>

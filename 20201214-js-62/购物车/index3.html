@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="price.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <ul class="list">
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+            </ul>
+            <div class="info">
+                <span>商品公合计：<em>0</em>件</span>
+                <span>共花费了：<em>0</em>元</span>
+                <br />
+                <br />
+                <span>其中最贵的商品单价是：<em>0</em>元</span>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-1.11.3.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    $(".list i").click(function(){
+        let index = $(this).index(); //获取当前元素在他的兄弟姐妹中的索引，0或2
+        let count = parseFloat($(this).siblings('em').html());
+        let strong = $(this).siblings('span').find('strong');
+        let price = parseFloat(strong.eq(0).html());
+        if(index === 0){
+            //减
+            count--;
+            count < 0? count = 0 : null;
+        }else{
+            //加
+            count++;
+            count > 10 ? count = 10 : null;
+        }
+        $(this).siblings('em').html(count);
+        strong.eq(1).html(price*count+"元");
+        computed();
+    })
+    function computed(){
+        let totalNum = 0;
+        let totalPrice = 0;
+        let priceAry = [0];
+        $(".list em").each(function(index,item){
+            let num = parseFloat($(item).html());
+            totalNum += num;
+        })
+        $(".list span").each(function(index,item){
+            let subTotal = parseFloat($(this).find('strong').eq(1).html());
+            totalPrice += subTotal;
+            let numItem = $(this).siblings('em').html();
+            let priceItem = parseFloat($(this).find('strong').eq(0).html());
+            if(numItem > 0){
+                priceAry.push(priceItem);
+            }
+        })
+        // $('.list strong').each(function(index,item){
+        //         let indexs = $(this).index(); // 获取当前元素对应的索引
+        //         if(indexs === 1){
+        //             let subtotal = parseFloat($(this).html());
+        //             totalPrice+=subtotal;
+        //         }
+        //         else {
+        //             let price = parseFloat($(this).html());
+        //             let xiaoJi = parseFloat($(this).next().html()); // 获取当前的小计
+        //             // 此时的this是第一个strong(单价),咱们想要的是第二个strong的内容小计
+
+        //             if(xiaoJi){ // 看看小计是不是0，如果是0那就不把当前的小计对应的商品单价push到数组里
+
+        //                 ary.push(price);
+        //             }
+        //         }
+        //     })
+        $(".info em").eq(0).html(totalNum);
+        $(".info em").eq(1).html(totalPrice);
+        $(".info em").eq(2).html(Math.max(...priceAry));
+    }
+</script>

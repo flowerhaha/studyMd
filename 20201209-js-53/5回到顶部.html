@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #back{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            background: yellowgreen;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <div id="back">
+            回到顶部
+        </div>
+    </div>
+</body>
+</html>
+<!-- 需求：当大于一屏的高度的时候出现回到顶部的按钮，点击时让其缓慢置顶， -->
+<script src="utils.js"></script>
+<script>
+    let back  = document.getElementById("back");
+    let container = document.getElementsByClassName(".container");
+    back.onclick = function(){
+        //utils.win('scrollTop',0);
+        let scrollT = utils.win('scrollTop');
+        let part = scrollT/50;
+        // 缓慢置顶
+        let timer = setInterval(()=>{
+            scrollT -= part; //给当前的运动距离累减一份
+            utils.win('scrollTop',scrollT);
+            if(scrollT<=0){
+                clearInterval(timer);
+                timer = null;
+            }
+        },20)
+        // 把运动的总距离分成50份，每一次运动50分之一，那50次就能够走完全程，
+      // 每运动一次需要20ms，那走完全程就需要20*50 = 1000ms也就是1s
+    }
+    let winH = utils.win('clientHeight');
+    // 监听当前浏览器滚动条的触发，一旦滚动，把绑定的函数就会执行
+    window.onscroll = function(){
+        let srcT = utils.win('scrollTop');
+        if(srcT>=winH){
+            back.style.display = "block";
+        }else{
+            back.style.display = "none";
+        }
+    }
+</script>

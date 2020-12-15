@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        border: 2px solid #333;
+    }
+</style>
+<body>
+    <button id="btn">点击</button>
+    <div id="box"></div>
+</body>
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    $('#btn').click(function(){
+        $('#box').fadeToggle('slow',function(){
+            alert('完成')
+        })
+    })
+</script>

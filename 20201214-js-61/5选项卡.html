@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #box{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .lists{
+            display: flex;
+        }
+        .lists li{
+            width: 100px;
+            height: 40px;
+            border: 1px solid #333;
+            margin-right: 20px;
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+            top: 1px;
+            left: 0;
+            cursor: pointer;
+
+        }
+        #box div{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #333;
+            text-align: center;
+            line-height: 300px;
+            display: none;
+        }
+        .lists li.current{
+            background: chocolate;
+            border-bottom-color: chocolate;
+        }
+        #box div.current{
+            background: chocolate;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="lists" id="lists">
+            <li class="current">音乐</li>
+            <li>电视</li>
+            <li>综艺</li>
+        </ul>
+        <div class="current">音乐</div>
+        <div>电视</div>
+        <div>综艺</div>
+    </div>
+</body>
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    // $('#lists li').each(function(index,item){
+    //     //$(原生元素) 会把原生的元素变成jq的实例
+    //     $(item).click(function(){
+    //         console.log(222);
+    //     })
+    // }
+        
+        
+        $('#lists li').click(function(){
+            // this也是原生元素
+            let i = $(this).index(); //获取当前对应的索引 0
+            $(this).addClass("current").siblings().removeClass('current');
+            $('#box div').eq(i).addClass("current").siblings().removeClass('current');
+            // $(this).addClass("current").siblings().removeClass("current").parent().siblings().eq($(this).index()).addClass('current').siblings('div').removeClass('current');
+
+        })
+    //------------
+    // let box = document.getElementById("box");
+    // let lis = document.getElementsByTagName("li");
+    // let odiv = box.getElementsByTagName("div");
+    // for(var i = 0; i <lis.length;i++){
+    //     lis[i].index = i;
+    //     lis[i].onclick = function(){
+    //         for(var i=0;i<lis.length;i++){
+    //             lis[i].classList.remove("current");
+    //             odiv[i].classList.remove("current");
+    //         }
+    //         this.classList.add("current");
+    //         odiv[this.index].classList.add("current");
+    //     }
+    // }
+
+    //-------------
+    // for(let i = 0; i <lis.length;i++){
+    //     lis[i].index = i;
+    //     lis[i].onclick = function(){
+    //         for(let i=0;i<lis.length;i++){
+    //             lis[i].classList.remove("current");
+    //             odiv[i].classList.remove("current");
+    //         }
+    //         this.classList.add("current");
+    //         odiv[this.index].classList.add("current");
+    //     }
+    // }
+
+    //------------
+
+</script>

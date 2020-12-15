@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        Function.prototype.myBind = function(context,...arg1){
+            context == null ? window : Object(context);
+            
+            let _this = this;
+            return function(...arg2){
+            return _this.apply(context,[...arg1,...arg2]);
+            }
+        }
+
+        function fn(){
+            console.log(this);
+        }
+        let fn1 = fn.myBind(1);
+        fn1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+{} null undefined 1 0 '1'
+typeof {} null
+
+a == undefined  一定是 undefined / null   
