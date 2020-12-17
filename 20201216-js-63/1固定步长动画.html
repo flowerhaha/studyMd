@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: orchid;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+        }
+        button{
+            position: absolute;
+            top: 300px;
+            width: 100px
+        }
+        button:nth-child(1){
+            left: 0;
+        }
+        button:nth-child(2){
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="right">往右</button>
+    <button id="left">往左</button>
+</body>
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    let right = document.getElementById("right");
+    let left = document.getElementById('left');
+    let box = document.getElementById("box");
+    let maxLeft = document.documentElement.clientWidth - box.offsetWidth;
+    let minLeft = 0;
+    let timer;
+    //固定步长的动画
+    step = 2;
+    right.onclick = function(){
+        clearInterval(timer);
+        timer = setInterval(()=>{
+            let leftStyle = parseFloat(getComputedStyle(box).left);
+            leftStyle += step;
+            if(leftStyle >= maxLeft){
+                clearInterval(timer);
+                box.style.left = maxLeft + "px";
+                return;
+            }
+            box.style.left = leftStyle + "px";
+        },16)
+    }
+    left.onclick = function(){
+        clearInterval(timer);    
+        timer = setInterval(()=>{
+            let leftStyle = parseFloat(getComputedStyle(box).left);
+            leftStyle -= step;
+            if(leftStyle <= 0){
+                clearInterval(timer);
+                box.style.left = 0 + "px";
+                return;
+            }
+            box.style.left = leftStyle + "px";
+        },16)
+    }
+</script>

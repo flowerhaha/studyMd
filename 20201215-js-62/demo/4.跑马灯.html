@@ -72,11 +72,28 @@
             </li>
         </ul>
     </div>
-    <script>
-        let list = document.getElementById("list");
-        let box = document.getElementById("box");
-        // 执行定时器，定时器里不短的让ul的left的值减小
-        // 如果盒子移动超过900，那么说明最后一张已经完全显示出来了，让当前ul瞬间left变为0；从头开始循环；
-    </script>
 </body>
 </html>
+<script>
+    let list = document.getElementById("list");
+    let box = document.getElementById("box");
+    // 执行定时器，定时器里不短的让ul的left的值减小
+    // 如果盒子移动超过900，那么说明最后一张已经完全显示出来了，让当前ul瞬间left变为0；从头开始循环；
+    
+    // let timer = null;
+    function move(){
+        let listLeft = parseFloat(list.style.left);
+        listLeft -= 2;
+        if(listLeft <= -900){
+            listLeft = 0;
+        }
+        list.style.left = listLeft + "px";
+    }
+    let timer = setInterval(move,16)
+    box.onmouseout = function(){
+        timer = setInterval(move,16)   //得加timer，不然下一步清除了timer，此时再进来定时器就是2，下一步清除的还是timer，2定时器没有清除，下一次进来定时器就是3，，，，，运动的就会越来越快
+    }
+    box.onmouseover = function(){
+        clearInterval(timer);
+    }
+</script>

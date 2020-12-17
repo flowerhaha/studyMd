@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="animate.min.css">
+    <style>
+        * {
+          padding: 0;
+          margin: 0;
+        }
+    
+        #box {
+          width: 200px;
+          height: 200px;
+          background: orangered;
+          border-radius: 50%;
+          left: 0;
+          position: absolute;
+        }
+    
+        button {
+          position: absolute;
+          top: 300px;
+          width: 100px;
+        }
+    
+        button:nth-child(1) {
+          left: 0
+        }
+    
+        button:nth-child(2) {
+          left: 150px
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="animated fadeInUp"></div>
+    <button id="right">往右</button>
+</body>
+</html>
+<script src="./jquery-1.11.3.js"></script>
+<script>
+    let box = document.getElementById('box');
+    let right = document.getElementById('right');
+    function linear(t,d,c,b){
+        return t / d * c + b;
+    }
+    //封装一个方法可以实现元素的多方向变化
+    //animate(元素,{target},总时间，回调函数)
+    function myAnimate(ele,target,duration=1000,callBack=()=>{}){ //总时间可以不传，可以设置默认值，callBack也可以不传，可以设定默认值
+        let begin = {};
+        let change = {};
+        for(let key in target){
+            begin[key] = parseFloat(getComputedStyle(ele)[key]);
+            change[key] = target[key] - begin[key];
+        }
+        let time = 0;
+        let timer = setInterval(()=>{
+            time += 17;
+            if(time >= duration){
+                clearInterval(timer);
+                for(let key in target){
+                    ele.style[key] = target[key] + 'px';
+                }
+                //callBack(); //放在临界条件中
+                //得判断用户传的是不是一个函数
+                // if(typeof callBack === 'function'){
+                //     callBack()
+                // }else{
+                //     console.log('请传为函数的callBack');
+                // }
+                try {
+                    callBack();
+                } catch (error){
+                    console.log('请传为函数的callBack');
+                }
+                return
+            }
+            for(let key in target){
+                ele.style[key] = linear(time,duration,change[key],begin[key]) + 'px';
+            }
+            // callBack();
+        },17)
+    }
+    let target = {  //目标位置（用户指定）
+        width: 600,
+        height: 700,
+        left: 200,
+        top: 200
+    }
+    myAnimate(box,target,3000,()=>{
+        console.log('执行完了');
+    })
+
+
+
+
+    // try {
+    // 让try中的代码运行，如果出错了，那catch中的代码就会运行，如果没有出错，那catch中的代码就不会运行
+    // } catch (error) {
+    //     console.log(error,,,111)
+    //      可以在这里做异常的处理
+    // }
+
+    //手动抛出错误
+   // throw new Error('')
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: orchid;
+            border-radius: 50%;
+            position: absolute;
+            left: 100px;
+        }
+        button{
+            position: absolute;
+            top: 300px;
+            width: 100px
+        }
+        button:nth-child(1){
+            left: 0;
+        }
+        button:nth-child(2){
+            left: 150px;
+        }
+    </style>
+</head>
+<script src="jquery-1.11.3.js"></script>
+<body>
+    <div id="box"></div>
+    <button id="right">往右</button>
+    <!-- <button id="left">往左</button> -->
+</body>
+</html>
+<script>
+    let right = document.getElementById("right");
+    // let left = document.getElementById('left');
+    let box = document.getElementById("box");
+    let begin = parseFloat(getComputedStyle(box).left); //意外情况，不是起始点开始的
+    let target = document.documentElement.clientWidth - box.offsetWidth;
+    let minLeft = 0;
+    //返回值就是当前元素的需要到达的位置
+    function linear(t,d,c,b){
+        return t / d * c + b
+    }
+    //固定动画时间
+    let duration = 3000;
+    let time = 0;
+    right.onclick = function(){
+        let timer = setInterval(()=>{
+            time += 16;
+            if(time >= duration){
+                clearInterval(timer);
+                box.style.left = target + "px";
+                return;
+            }
+            // let left = time/duration * maxLeft + begin;
+            let left = linear(time,duration,target-begin,begin);
+            box.style.left = left + "px";
+        },16)
+    }
+
+    //时间比 === 路程比
+    //已经走过的时间/总时间 === 已经走过的路程/总路程
+    //t:已经走过的时间   time
+    //d:总时间          duration
+    //change： 总路程    target-begin
+    //b:起始的距离       begin
+    //x: 当前应该到达的位置  x = t/d*c
+</script>
