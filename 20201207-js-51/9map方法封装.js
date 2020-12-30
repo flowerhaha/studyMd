@@ -2,8 +2,8 @@
 Array.prototype.myMap = function(callBack){
     let resAry = [];
     for(let i=0;i<this.length;i++){
-        let fnCall = callBack(this[i],i);
-        resAry.push(fnCall);
+        let val = callBack(this[i],i);
+        resAry.push(val);
     }
     return resAry;
 }

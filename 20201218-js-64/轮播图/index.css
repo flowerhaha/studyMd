@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+#outer{
+    width: 800px;
+    height: 300px;
+    margin: 100px auto;
+    border: 1px solid red;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+#wrapper{
+    display: flex;
+    /* width: 2400px; */
+    height: 300px;
+    background: lightcoral;
+    position: absolute;
+    left: 0;
+}
+#wrapper li{
+    /* width: 800px; */
+    height: 300px;
+}
+#wrapper li img{
+    display: block;
+    width: 800px;
+    height: 100%;
+}
+#list{
+    /* width: 250px; 以后宽度不固定，自动撑开 */
+    height: 30px;
+    background: lightseagreen;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    display: flex;
+    /* justify-content: space-around; 用它必须得有宽度 */
+    align-items: center;
+    transform: translate(-50%,0);
+}
+#list li{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+#list li.active{
+    background: magenta;
+}
+#outer a{
+    width: 30px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    text-decoration: none;
+    color: white;
+    transform: translate(0,-50%);
+}
+#left{
+    left: 0;
+}
+#right{
+    right: 0;
+}
